@@ -1,9 +1,12 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const [email, setEmail] = useState('');
 
   useEffect(() => {
     // Setup intersection observer for scroll animations
@@ -28,6 +31,14 @@ const Index = () => {
       observerRef.current?.disconnect();
     };
   }, []);
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle email submission here
+    console.log('Email submitted:', email);
+    // You can add toast notification or other feedback here
+    setEmail('');
+  };
 
   const features = [
     {
@@ -93,27 +104,31 @@ const Index = () => {
           <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
             Én platform – tilpasset ledelse, lærere og elever
           </p>
-          <div className="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center">
-            <a
-              href="#kontakt"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              Book en demo
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-          </div>
           
-          {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <ChevronDown className="w-8 h-8 text-gray-400" />
-          </div>
+          {/* Email Signup Form */}
+          <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto mb-16">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Input
+                type="email"
+                placeholder="Din email adresse"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-green-400"
+              />
+              <Button
+                type="submit"
+                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                Skriv dig op på venteliste
+              </Button>
+            </div>
+          </form>
         </div>
         
-        {/* Hero illustration placeholder */}
-        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-1/3 h-96 bg-gradient-to-l from-blue-500/20 to-transparent rounded-l-3xl hidden lg:block">
-          <div className="flex items-center justify-center h-full">
-            <div className="w-64 h-48 bg-gradient-to-br from-blue-500/30 to-green-400/30 rounded-2xl backdrop-blur-sm border border-white/10"></div>
-          </div>
+        {/* Scroll indicator - moved to bottom center without overlapping */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-8 h-8 text-gray-400" />
         </div>
       </section>
 
