@@ -81,7 +81,7 @@ const Index = () => {
       bullets: [
         "Differentieret læring for alle",
         "AI-støtte til ADHD, autisme og dysleksi",
-        "Øget læringsudbytte & selvværd"
+        "Øget læringsудbytte & selvværd"
       ],
       layout: "image-right"
     }
@@ -221,7 +221,7 @@ const Index = () => {
         </div>
       </footer>
 
-      <style jsx>{`
+      <style>{`
         .animate-in {
           opacity: 1 !important;
           transform: translateX(0) !important;
