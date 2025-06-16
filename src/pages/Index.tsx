@@ -116,7 +116,7 @@ const Index = () => {
         "Trivsel & inklusion for elever"
       ],
       layout: "image-right",
-      image: "/lovable-uploads/b4e9f402-776a-4351-8167-8b33966547a8.png"
+      image: "/lovable-uploads/9db3cda9-9df3-415d-861c-97bbb5a5e6e5.png"
     },
     {
       title: "Kommunikation & opgavestyring",
