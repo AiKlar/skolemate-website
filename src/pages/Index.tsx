@@ -1,29 +1,36 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import confetti from 'canvas-confetti';
 
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [animatedSections, setAnimatedSections] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     // Setup intersection observer for scroll animations
     observerRef.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
+          const sectionId = entry.target.getAttribute('data-section-id');
+          if (sectionId && !animatedSections.has(sectionId)) {
+            entry.target.classList.add('animate-feature-pop');
+            setAnimatedSections(prev => new Set(prev).add(sectionId));
+          }
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
     });
 
-    // Observe all feature content sections
-    const sections = document.querySelectorAll('.feature-content');
+    // Observe all feature sections
+    const sections = document.querySelectorAll('.feature-section');
     sections.forEach((section) => {
       observerRef.current?.observe(section);
     });
@@ -31,7 +38,41 @@ const Index = () => {
     return () => {
       observerRef.current?.disconnect();
     };
-  }, []);
+  }, [animatedSections]);
+
+  const triggerFireworks = () => {
+    const duration = 3000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+    function randomInRange(min: number, max: number) {
+      return Math.random() * (max - min) + min;
+    }
+
+    const interval = setInterval(function() {
+      const timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      const particleCount = 50 * (timeLeft / duration);
+      
+      // Left side
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+      });
+      
+      // Right side
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+      });
+    }, 250);
+  };
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,6 +84,9 @@ const Index = () => {
     console.log('Email submitted:', email);
     setIsSubmitted(true);
     setEmail('');
+    
+    // Trigger fireworks
+    triggerFireworks();
     
     // Reset after 3 seconds
     setTimeout(() => {
@@ -199,13 +243,17 @@ const Index = () => {
         {/* Features Sections */}
         <div className="space-y-32 py-32">
           {features.map((feature, index) => (
-            <section key={index} className="feature-section relative">
+            <section 
+              key={index} 
+              className="feature-section relative opacity-0 transform translate-y-12 scale-95 transition-all duration-700"
+              data-section-id={`feature-${index}`}
+            >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className={`grid lg:grid-cols-2 gap-16 items-center ${feature.layout === 'image-right' ? 'lg:grid-flow-col-dense' : ''}`}>
                   
                   {/* Content */}
                   <div className={`${feature.layout === 'image-right' ? 'lg:col-start-2' : ''}`}>
-                    <div className="feature-content opacity-0 transform translate-y-8 scale-95 transition-all duration-700 bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-700/50">
+                    <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-700/50">
                       <div className="flex items-center mb-6">
                         <div className="bg-gradient-to-r from-blue-500 to-green-400 p-3 rounded-2xl mr-4">
                           {feature.icon}
@@ -290,7 +338,7 @@ const Index = () => {
       </footer>
 
       <style>{`
-        .animate-in {
+        .animate-feature-pop {
           opacity: 1 !important;
           transform: translateY(0) scale(1) !important;
         }
@@ -313,7 +361,7 @@ const Index = () => {
         }
         
         @media (max-width: 1024px) {
-          .feature-content {
+          .feature-section {
             opacity: 1 !important;
             transform: translateY(0) scale(1) !important;
           }
