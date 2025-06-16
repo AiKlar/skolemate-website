@@ -1,12 +1,13 @@
-
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn } from 'lucide-react';
+import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     // Setup intersection observer for scroll animations
@@ -32,12 +33,22 @@ const Index = () => {
     };
   }, []);
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle email submission here
+    setIsSubmitting(true);
+    
+    // Simulate form submission delay for animation
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
     console.log('Email submitted:', email);
-    // You can add toast notification or other feedback here
+    setIsSubmitted(true);
     setEmail('');
+    
+    // Reset after 3 seconds
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(false);
+    }, 3000);
   };
 
   const features = [
@@ -119,21 +130,56 @@ const Index = () => {
           </p>
           
           {/* Email Signup Form */}
-          <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto mb-16">
+          <form 
+            onSubmit={handleEmailSubmit} 
+            className="max-w-md mx-auto mb-16"
+            name="waitlist"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            {/* Hidden field for Netlify */}
+            <input type="hidden" name="form-name" value="waitlist" />
+            <input type="hidden" name="bot-field" />
+            
             <div className="flex flex-col sm:flex-row gap-4">
               <Input
                 type="email"
+                name="email"
                 placeholder="Din email adresse"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-green-400"
+                disabled={isSubmitting || isSubmitted}
+                className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-green-400 disabled:opacity-50"
               />
               <Button
                 type="submit"
-                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                disabled={isSubmitting || isSubmitted}
+                className={`
+                  px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform shadow-lg hover:shadow-xl
+                  ${isSubmitted 
+                    ? 'bg-green-600 hover:bg-green-600 scale-105' 
+                    : isSubmitting 
+                      ? 'bg-gray-600 hover:bg-gray-600' 
+                      : 'bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 hover:scale-105'
+                  }
+                  text-white
+                `}
               >
-                Skriv dig op på venteliste
+                {isSubmitted ? (
+                  <div className="flex items-center animate-in fade-in-0 zoom-in-95 duration-300">
+                    <Check className="w-5 h-5 mr-2" />
+                    Tilmeldt!
+                  </div>
+                ) : isSubmitting ? (
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Tilmelder...
+                  </div>
+                ) : (
+                  'Skriv dig op på venteliste'
+                )}
               </Button>
             </div>
           </form>
@@ -159,7 +205,7 @@ const Index = () => {
                   
                   {/* Content */}
                   <div className={`${feature.layout === 'image-right' ? 'lg:col-start-2' : ''}`}>
-                    <div className="feature-content opacity-0 transform translate-y-8 transition-all duration-700 bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-700/50">
+                    <div className="feature-content opacity-0 transform translate-y-8 scale-95 transition-all duration-700 bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-700/50">
                       <div className="flex items-center mb-6">
                         <div className="bg-gradient-to-r from-blue-500 to-green-400 p-3 rounded-2xl mr-4">
                           {feature.icon}
@@ -246,7 +292,7 @@ const Index = () => {
       <style>{`
         .animate-in {
           opacity: 1 !important;
-          transform: translateY(0) !important;
+          transform: translateY(0) scale(1) !important;
         }
         
         .timeline-line {
@@ -269,7 +315,7 @@ const Index = () => {
         @media (max-width: 1024px) {
           .feature-content {
             opacity: 1 !important;
-            transform: translateY(0) !important;
+            transform: translateY(0) scale(1) !important;
           }
         }
       `}</style>
