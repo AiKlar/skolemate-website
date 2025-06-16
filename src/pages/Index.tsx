@@ -99,7 +99,7 @@ const Index = () => {
             </div>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-            samler AI, kommunikation og læring
+            AI-platformen til fremtidens skole
           </h1>
           <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
             Én platform – tilpasset ledelse, lærere og elever
