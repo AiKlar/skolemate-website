@@ -105,7 +105,7 @@ const Index = () => {
         "Elever: interaktiv undervisning → højere engagement"
       ],
       layout: "image-left",
-      image: "/lovable-uploads/8da9b8be-b7b8-4b7b-be10-a901de8eadd5.png"
+      image: "/lovable-uploads/73b53312-7252-4594-be0e-2ae28a8bc10d.png"
     },
     {
       title: "AI-chatbot med skolens info",
