@@ -173,6 +173,11 @@ const Index = () => {
             Én platform – tilpasset ledelse, lærere og elever
           </p>
           
+          {/* Waitlist description */}
+          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+            Skriv dig op på ventelisten, og vær en af de første til at prøve SkoleMate. Vi holder dig løbende opdateret.
+          </p>
+          
           {/* Email Signup Form */}
           <form 
             onSubmit={handleEmailSubmit} 
