@@ -21,8 +21,8 @@ const Index = () => {
       rootMargin: '0px 0px -100px 0px'
     });
 
-    // Observe all feature sections
-    const sections = document.querySelectorAll('.feature-section');
+    // Observe all feature content sections
+    const sections = document.querySelectorAll('.feature-content');
     sections.forEach((section) => {
       observerRef.current?.observe(section);
     });
@@ -49,7 +49,8 @@ const Index = () => {
         "Lærere: differentieret materiale → mere tid til elever", 
         "Elever: interaktiv undervisning → højere engagement"
       ],
-      layout: "image-left"
+      layout: "image-left",
+      image: null
     },
     {
       title: "AI-chatbot med skolens info",
@@ -59,7 +60,8 @@ const Index = () => {
         "Svar på regler, faglige spørgsmål",
         "Trivsel & inklusion for elever"
       ],
-      layout: "image-right"
+      layout: "image-right",
+      image: "/lovable-uploads/6cca29f9-130f-4722-9f6c-c588b556767a.png"
     },
     {
       title: "Kommunikation & opgavestyring",
@@ -69,7 +71,8 @@ const Index = () => {
         "Lærere udsender opgaver i ét flow",
         "Elever får klar struktur & feedback"
       ],
-      layout: "image-left"
+      layout: "image-left",
+      image: null
     },
     {
       title: "Inklusionsværktøjer (AI)",
@@ -79,7 +82,8 @@ const Index = () => {
         "AI-støtte til ADHD, autisme og dysleksi",
         "Øget læringsudbytte & selvværd"
       ],
-      layout: "image-right"
+      layout: "image-right",
+      image: null
     }
   ];
 
@@ -149,13 +153,13 @@ const Index = () => {
         {/* Features Sections */}
         <div className="space-y-32 py-32">
           {features.map((feature, index) => (
-            <section key={index} className={`feature-section opacity-0 transition-all duration-1000 ${feature.layout === 'image-left' ? 'translate-x-12' : '-translate-x-12'}`}>
+            <section key={index} className="feature-section relative">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className={`grid lg:grid-cols-2 gap-16 items-center ${feature.layout === 'image-right' ? 'lg:grid-flow-col-dense' : ''}`}>
                   
                   {/* Content */}
                   <div className={`${feature.layout === 'image-right' ? 'lg:col-start-2' : ''}`}>
-                    <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-700/50">
+                    <div className="feature-content opacity-0 transform translate-y-8 transition-all duration-700 bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-700/50">
                       <div className="flex items-center mb-6">
                         <div className="bg-gradient-to-r from-blue-500 to-green-400 p-3 rounded-2xl mr-4">
                           {feature.icon}
@@ -176,12 +180,22 @@ const Index = () => {
                     </div>
                   </div>
 
-                  {/* Image placeholder */}
+                  {/* Image */}
                   <div className={`${feature.layout === 'image-right' ? 'lg:col-start-1' : ''}`}>
                     <div className="relative">
-                      <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-green-400/20 rounded-3xl backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                        <div className="text-6xl opacity-50">{feature.icon}</div>
-                      </div>
+                      {feature.image ? (
+                        <div className="w-full h-80 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                          <img
+                            src={feature.image}
+                            alt={feature.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-green-400/20 rounded-3xl backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                          <div className="text-6xl opacity-50">{feature.icon}</div>
+                        </div>
+                      )}
                       {/* Floating elements for visual interest */}
                       <div className="absolute -top-4 -right-4 w-12 h-12 bg-green-400/30 rounded-full blur-sm"></div>
                       <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-500/30 rounded-full blur-md"></div>
@@ -232,7 +246,7 @@ const Index = () => {
       <style>{`
         .animate-in {
           opacity: 1 !important;
-          transform: translateX(0) !important;
+          transform: translateY(0) !important;
         }
         
         .timeline-line {
@@ -253,9 +267,9 @@ const Index = () => {
         }
         
         @media (max-width: 1024px) {
-          .feature-section {
+          .feature-content {
             opacity: 1 !important;
-            transform: translateX(0) !important;
+            transform: translateY(0) !important;
           }
         }
       `}</style>
