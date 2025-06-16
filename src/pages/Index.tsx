@@ -173,15 +173,10 @@ const Index = () => {
             Én platform – tilpasset ledelse, lærere og elever
           </p>
           
-          {/* Waitlist description */}
-          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Skriv dig op på ventelisten, og vær en af de første til at prøve SkoleMate. Vi holder dig løbende opdateret.
-          </p>
-          
           {/* Email Signup Form */}
           <form 
             onSubmit={handleEmailSubmit} 
-            className="max-w-md mx-auto mb-16"
+            className="max-w-md mx-auto mb-8"
             name="waitlist"
             method="POST"
             data-netlify="true"
@@ -232,6 +227,11 @@ const Index = () => {
               </Button>
             </div>
           </form>
+          
+          {/* Waitlist description */}
+          <p className="text-lg text-gray-400 mb-16 max-w-2xl mx-auto">
+            Skriv dig op på ventelisten, og vær en af de første til at prøve SkoleMate. Vi holder dig løbende opdateret.
+          </p>
         </div>
         
         {/* Scroll indicator - centered with timeline */}
