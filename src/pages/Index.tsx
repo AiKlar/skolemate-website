@@ -105,7 +105,7 @@ const Index = () => {
         "Elever: interaktiv undervisning → højere engagement"
       ],
       layout: "image-left",
-      image: "/lovable-uploads/73b53312-7252-4594-be0e-2ae28a8bc10d.png"
+      image: "/lovable-uploads/b3dc098e-1228-4b46-8284-8fcbbae0ee0e.png"
     },
     {
       title: "AI-chatbot med skolens info",
@@ -127,7 +127,7 @@ const Index = () => {
         "Elever får klar struktur & feedback"
       ],
       layout: "image-left",
-      image: null
+      image: "/lovable-uploads/73b53312-7252-4594-be0e-2ae28a8bc10d.png"
     },
     {
       title: "Inklusionsværktøjer (AI)",
