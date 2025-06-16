@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight } from 'lucide-react';
+import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -44,7 +44,6 @@ const Index = () => {
     {
       title: "AI-generering af forløb & materiale",
       icon: <BookOpen className="w-8 h-8" />,
-      audience: "🏫 👩‍🏫 👨‍🎓",
       bullets: [
         "Ledelse: rammer for ensretning → overblik & kvalitet",
         "Lærere: differentieret materiale → mere tid til elever", 
@@ -55,7 +54,6 @@ const Index = () => {
     {
       title: "AI-chatbot med skolens info",
       icon: <MessageCircle className="w-8 h-8" />,
-      audience: "🏫 👩‍🏫 👨‍🎓",
       bullets: [
         "Formidler kultur & politikker",
         "Svar på regler, faglige spørgsmål",
@@ -66,7 +64,6 @@ const Index = () => {
     {
       title: "Kommunikation & opgavestyring",
       icon: <ClipboardList className="w-8 h-8" />,
-      audience: "🏫 👩‍🏫 👨‍🎓",
       bullets: [
         "Ledelse ser trivsel i realtid",
         "Lærere udsender opgaver i ét flow",
@@ -77,11 +74,10 @@ const Index = () => {
     {
       title: "Inklusionsværktøjer (AI)",
       icon: <Heart className="w-8 h-8" />,
-      audience: "🏫 👩‍🏫 👨‍🎓",
       bullets: [
         "Differentieret læring for alle",
         "AI-støtte til ADHD, autisme og dysleksi",
-        "Øget læringsудbytte & selvværd"
+        "Øget læringsudbytte & selvværd"
       ],
       layout: "image-right"
     }
@@ -89,6 +85,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
+      {/* Login Button - Fixed Top Right */}
+      <div className="fixed top-6 right-6 z-50">
+        <a
+          href="https://app.skolemate.dk"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+        >
+          <LogIn className="mr-2 w-4 h-4" />
+          Login
+        </a>
+      </div>
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
@@ -153,7 +162,6 @@ const Index = () => {
                         </div>
                         <div>
                           <h3 className="text-2xl sm:text-3xl font-bold mb-2">{feature.title}</h3>
-                          <div className="text-2xl">{feature.audience}</div>
                         </div>
                       </div>
                       
