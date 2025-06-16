@@ -116,7 +116,7 @@ const Index = () => {
         "Trivsel & inklusion for elever"
       ],
       layout: "image-right",
-      image: "/lovable-uploads/6cca29f9-130f-4722-9f6c-c588b556767a.png"
+      image: "/lovable-uploads/b4e9f402-776a-4351-8167-8b33966547a8.png"
     },
     {
       title: "Kommunikation & opgavestyring",
@@ -278,11 +278,11 @@ const Index = () => {
                   <div className={`${feature.layout === 'image-right' ? 'lg:col-start-1' : ''}`}>
                     <div className="relative">
                       {feature.image ? (
-                        <div className="w-full h-80 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                        <div className="w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
                           <img
                             src={feature.image}
                             alt={feature.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-auto object-contain"
                           />
                         </div>
                       ) : (
