@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -168,8 +169,21 @@ const Index = () => {
         <input type="email" name="email" />
       </form>
 
-      {/* Login Button - Fixed Top Right */}
-      <div className="fixed top-6 right-6 z-50">
+      {/* Login Button - Responsive positioning */}
+      <div className="fixed top-6 right-6 z-50 lg:block hidden">
+        <a
+          href="https://app.skolemate.dk"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+        >
+          <LogIn className="mr-2 w-4 h-4" />
+          Login
+        </a>
+      </div>
+
+      {/* Login Button - Mobile (bottom right) */}
+      <div className="fixed bottom-6 right-6 z-50 lg:hidden block">
         <a
           href="https://app.skolemate.dk"
           target="_blank"
