@@ -1,4 +1,5 @@
 
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -175,7 +176,7 @@ const Index = () => {
             AI-platformen til fremtidens skole
           </h1>
           <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Én platform – tilpasset ledelse, lærere og elever
+            Én platform – tilpasset ledelse, lærere og elever - udviklet til Efterskoler, Frie Fagskoler og Specialskoler.
           </p>
           
           {/* Email Signup Form */}
@@ -395,3 +396,4 @@ const Index = () => {
 };
 
 export default Index;
+
