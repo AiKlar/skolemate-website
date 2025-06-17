@@ -335,15 +335,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 border-t border-gray-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text text-2xl font-bold mb-4">
-            SkoleMate
-          </div>
-          <p className="text-gray-400 mb-8">© 2024 SkoleMate. Alle rettigheder forbeholdes.</p>
-          
-          {/* AiKlar Section */}
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <span className="text-gray-400">SkoleMate er udviklet af</span>
-            <a 
+          <a 
               href="https://aiklar.dk" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -355,7 +347,10 @@ const Index = () => {
                 className="h-8"
               />
             </a>
-          </div>
+          <p className="text-gray-400 mb-8">SkoleMate er udviklet af <a href="https://aiklar.dk">AiKlar</a> © 2025. Alle rettigheder forbeholdes.</p>
+          
+          {/* AiKlar Section */}
+          
         </div>
       </footer>
 
