@@ -74,11 +74,9 @@ const Index = () => {
   };
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    // Don't prevent default - let Netlify handle the form submission
     setIsSubmitting(true);
     
-    // For Netlify forms, we don't need to prevent the default form submission
-    // The form will be submitted naturally to Netlify
     console.log('Email submitted:', email);
     setIsSubmitted(true);
     
