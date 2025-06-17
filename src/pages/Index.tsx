@@ -211,12 +211,18 @@ const Index = () => {
             AI i praksis – udviklet til efterskoler, frie fagskoler og specialskoler.
           </p>
           
+          {/* Waitlist description - moved above form and shortened */}
+          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+            Skriv dig op på ventelisten, og vær en af de første til at prøve SkoleMate.
+          </p>
+          
           {/* Email Signup Form - Updated for MailerLite */}
           <div className="max-w-md mx-auto mb-8">
             <div className="flex flex-col sm:flex-row gap-4">
               <Input
                 type="email"
                 id="waitlist-email"
+                name="fields[email]"
                 placeholder="Din email adresse"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -256,11 +262,6 @@ const Index = () => {
               </Button>
             </div>
           </div>
-          
-          {/* Waitlist description */}
-          <p className="text-lg text-gray-400 mb-16 max-w-2xl mx-auto">
-            Skriv dig op på ventelisten, og vær en af de første til at prøve SkoleMate. Vi holder dig løbende opdateret.
-          </p>
         </div>
         
         {/* Scroll indicator - centered with timeline */}
