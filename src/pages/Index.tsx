@@ -161,7 +161,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
       {/* Hidden form for Netlify registration */}
-      <form name="waitlist" netlify netlify-honeypot="bot-field" hidden>
+      <form name="waitlist" data-netlify="true" netlify-honeypot="bot-field" hidden>
         <input type="email" name="email" />
       </form>
 
