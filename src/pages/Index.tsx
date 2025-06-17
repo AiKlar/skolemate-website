@@ -99,17 +99,18 @@ const Index = () => {
       title: "AI-generering af forløb & materiale",
       icon: <BookOpen className="w-8 h-8" />,
       bullets: [
-        "Ledelse: rammer for ensretning → overblik & kvalitet",
-        "Lærere: differentieret materiale → mere tid til elever", 
-        "Elever: interaktiv undervisning → højere engagement"
+        "Ledelse: rammesætning og indblik → overblik & kvalitet",
+        "Lærer: Mindre copy/paste, mere af alt det der giver mening", 
+        "Elever: målrettet interaktiv undervisning → højere engagement og bedre læring"
       ],
       layout: "image-left",
       image: "/lovable-uploads/9db86486-cfa7-403e-a45b-3bf68a233bc1.png"
     },
     {
-      title: "AI-chatbot med skolens info",
+      title: "integreret AI-chatbot med skolens info",
       icon: <MessageCircle className="w-8 h-8" />,
       bullets: [
+        "Bedre opstart for elever",
         "Formidler kultur & politikker",
         "Svar på regler, faglige spørgsmål",
         "Trivsel & inklusion for elever"
@@ -121,7 +122,7 @@ const Index = () => {
       title: "Kommunikation & opgavestyring",
       icon: <ClipboardList className="w-8 h-8" />,
       bullets: [
-        "Ledelse ser trivsel i realtid",
+        "Ledelse får unikt indblik med data",
         "Lærere udsender opgaver i ét flow",
         "Elever får klar struktur & feedback"
       ],
