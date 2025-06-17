@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -97,6 +98,7 @@ const Index = () => {
   const features = [
     {
       title: "AI-generering af forløb & materiale",
+      description: "SkoleMate genererer lektionsplaner og undervisningsmateriale med få klik – tilpasset skolens rammer og den enkelte elevs behov.",
       icon: <BookOpen className="w-8 h-8" />,
       bullets: [
         "Ledelse: rammesætning og indblik → overblik & kvalitet",
@@ -108,6 +110,7 @@ const Index = () => {
     },
     {
       title: "integreret AI-chatbot med skolens info",
+      description: "Én chatbot – tæt integreret med skolens retningslinjer, dagligdag og værdier. Den hjælper både elever, lærere og ledelse med at finde svar hurtigt.",
       icon: <MessageCircle className="w-8 h-8" />,
       bullets: [
         "Bedre opstart for elever",
@@ -120,6 +123,7 @@ const Index = () => {
     },
     {
       title: "Kommunikation & opgavestyring",
+      description: "SkoleMate samler beskeder, opgaver og struktur ét sted. Intuitivt for elever – effektivt for lærere – værdifuldt for ledelse.",
       icon: <ClipboardList className="w-8 h-8" />,
       bullets: [
         "Ledelse får unikt indblik med data",
@@ -131,6 +135,7 @@ const Index = () => {
     },
     {
       title: "Inklusionsværktøjer (AI)",
+      description: "AI-værktøjer tilpasser materiale og læringsstil til elever med fx ordblindhed, ADHD eller autisme – uden ekstra arbejde for læreren.",
       icon: <Heart className="w-8 h-8" />,
       bullets: [
         "Differentieret læring for alle",
@@ -267,6 +272,8 @@ const Index = () => {
                           <h3 className="text-2xl sm:text-3xl font-bold mb-2">{feature.title}</h3>
                         </div>
                       </div>
+                      
+                      <p className="text-gray-300 text-lg leading-relaxed mb-6">{feature.description}</p>
                       
                       <ul className="space-y-4">
                         {feature.bullets.map((bullet, i) => (
