@@ -208,7 +208,7 @@ const Index = () => {
             AI-platformen til fremtidens skole
           </h1>
           <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            AI i praksis – samlet i én platform, udviklet til efterskoler, frie fagskoler og specialskoler.
+            AI i praksis – udviklet til efterskoler, frie fagskoler og specialskoler.
           </p>
           
           {/* Email Signup Form - Updated for MailerLite */}
