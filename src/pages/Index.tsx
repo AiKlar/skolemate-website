@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -79,12 +77,10 @@ const Index = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission delay for animation
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    // For Netlify forms, we don't need to prevent the default form submission
+    // The form will be submitted naturally to Netlify
     console.log('Email submitted:', email);
     setIsSubmitted(true);
-    setEmail('');
     
     // Trigger fireworks
     triggerFireworks();
@@ -179,18 +175,23 @@ const Index = () => {
             AI i praksis – samlet i én platform, udviklet til efterskoler, frie fagskoler og specialskoler.
           </p>
           
-          {/* Email Signup Form */}
+          {/* Email Signup Form - Updated for Netlify */}
           <form 
-            onSubmit={handleEmailSubmit} 
-            className="max-w-md mx-auto mb-8"
-            name="waitlist"
+            name="venteliste"
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
+            action="/success"
+            className="max-w-md mx-auto mb-8"
+            onSubmit={handleEmailSubmit}
           >
-            {/* Hidden field for Netlify */}
-            <input type="hidden" name="form-name" value="waitlist" />
-            <input type="hidden" name="bot-field" />
+            {/* Hidden fields for Netlify */}
+            <input type="hidden" name="form-name" value="venteliste" />
+            <p className="hidden">
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Input
@@ -205,7 +206,7 @@ const Index = () => {
               />
               <Button
                 type="submit"
-                disabled={isSubmitting || isSubmitted}
+                disabled={isSubmitting || isSubmitted || !email}
                 className={`
                   px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform shadow-lg hover:shadow-xl
                   ${isSubmitted 
@@ -396,4 +397,3 @@ const Index = () => {
 };
 
 export default Index;
-
