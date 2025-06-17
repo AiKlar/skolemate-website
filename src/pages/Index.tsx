@@ -73,21 +73,37 @@ const Index = () => {
     }, 250);
   };
 
-  const handleEmailSubmit = async (e: React.FormEvent) => {
-    // Don't prevent default - let Netlify handle the form submission
+  const handleEmailSubmit = async () => {
     setIsSubmitting(true);
     
-    console.log('Email submitted:', email);
-    setIsSubmitted(true);
-    
-    // Trigger fireworks
-    triggerFireworks();
-    
-    // Reset after 3 seconds
-    setTimeout(() => {
+    const data = new URLSearchParams({
+      'form-name': 'waitlist',
+      email: email.trim()
+    });
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: data.toString()
+      });
+      
+      console.log('Email submitted:', email);
+      setIsSubmitted(true);
+      
+      // Trigger fireworks
+      triggerFireworks();
+      
+      // Reset after 3 seconds
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
       setIsSubmitting(false);
-      setIsSubmitted(false);
-    }, 3000);
+      // Could add error handling here if needed
+    }
   };
 
   const features = [
@@ -144,6 +160,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
+      {/* Hidden form for Netlify registration */}
+      <form name="waitlist" netlify netlify-honeypot="bot-field" hidden>
+        <input type="email" name="email" />
+      </form>
+
       {/* Login Button - Fixed Top Right */}
       <div className="fixed top-6 right-6 z-50">
         <a
@@ -173,28 +194,12 @@ const Index = () => {
             AI i praksis – samlet i én platform, udviklet til efterskoler, frie fagskoler og specialskoler.
           </p>
           
-          {/* Email Signup Form - Updated for Netlify */}
-          <form 
-            name="venteliste"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            action="/success"
-            className="max-w-md mx-auto mb-8"
-            onSubmit={handleEmailSubmit}
-          >
-            {/* Hidden fields for Netlify */}
-            <input type="hidden" name="form-name" value="venteliste" />
-            <p className="hidden">
-              <label>
-                Don't fill this out if you're human: <input name="bot-field" />
-              </label>
-            </p>
-            
+          {/* Email Signup Form - Updated for JavaScript submission */}
+          <div className="max-w-md mx-auto mb-8">
             <div className="flex flex-col sm:flex-row gap-4">
               <Input
                 type="email"
-                name="email"
+                id="waitlist-email"
                 placeholder="Din email adresse"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -203,7 +208,9 @@ const Index = () => {
                 className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-green-400 disabled:opacity-50"
               />
               <Button
-                type="submit"
+                id="waitlist-btn"
+                type="button"
+                onClick={handleEmailSubmit}
                 disabled={isSubmitting || isSubmitted || !email}
                 className={`
                   px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform shadow-lg hover:shadow-xl
@@ -231,7 +238,7 @@ const Index = () => {
                 )}
               </Button>
             </div>
-          </form>
+          </div>
           
           {/* Waitlist description */}
           <p className="text-lg text-gray-400 mb-16 max-w-2xl mx-auto">
