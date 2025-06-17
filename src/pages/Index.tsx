@@ -323,7 +323,7 @@ const Index = () => {
             Få en personlig demo og se forskellen på egen skole.
           </p>
           <a
-            href="mailto:info@skolemate.dk"
+            href="mailto:info@aiklar.dk"
             className="inline-flex items-center px-12 py-6 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-lg rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-green-500/25"
           >
             <Mail className="mr-3 w-6 h-6" />
