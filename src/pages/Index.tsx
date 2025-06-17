@@ -338,7 +338,24 @@ const Index = () => {
           <div className="bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text text-2xl font-bold mb-4">
             SkoleMate
           </div>
-          <p className="text-gray-400">© 2024 SkoleMate. Alle rettigheder forbeholdes.</p>
+          <p className="text-gray-400 mb-8">© 2024 SkoleMate. Alle rettigheder forbeholdes.</p>
+          
+          {/* AiKlar Section */}
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <span className="text-gray-400">SkoleMate er udviklet af</span>
+            <a 
+              href="https://aiklar.dk" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
+            >
+              <img 
+                src="/lovable-uploads/ee644135-8145-4e97-8a09-dab655b25d72.png" 
+                alt="AiKlar" 
+                className="h-8"
+              />
+            </a>
+          </div>
         </div>
       </footer>
 
