@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -105,7 +104,7 @@ const Index = () => {
         "Elever: interaktiv undervisning → højere engagement"
       ],
       layout: "image-left",
-      image: "/lovable-uploads/17ceb88b-ffcf-4d7b-b533-17e32f1f3257.png"
+      image: "/lovable-uploads/9db86486-cfa7-403e-a45b-3bf68a233bc1.png"
     },
     {
       title: "AI-chatbot med skolens info",
