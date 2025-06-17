@@ -74,21 +74,23 @@ const Index = () => {
   };
 
   const handleEmailSubmit = async () => {
+    if (!email.trim()) return;
+    
     setIsSubmitting(true);
     
-    const data = new URLSearchParams({
-      'form-name': 'waitlist',
-      email: email.trim()
-    });
+    const formData = new FormData();
+    formData.append('fields[email]', email.trim());
+    formData.append('ml-submit', '1');
+    formData.append('anticsrf', 'true');
 
     try {
-      await fetch('/', {
+      const response = await fetch('https://assets.mailerlite.com/jsonp/1455812/forms/157482125464962296/subscribe', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: data.toString()
+        body: formData,
+        mode: 'no-cors' // MailerLite handles CORS differently
       });
       
-      console.log('Email submitted:', email);
+      console.log('Email submitted to MailerLite:', email);
       setIsSubmitted(true);
       
       // Trigger fireworks
@@ -98,9 +100,10 @@ const Index = () => {
       setTimeout(() => {
         setIsSubmitting(false);
         setIsSubmitted(false);
+        setEmail('');
       }, 3000);
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Error submitting to MailerLite:', error);
       setIsSubmitting(false);
       // Could add error handling here if needed
     }
@@ -194,7 +197,7 @@ const Index = () => {
             AI i praksis – samlet i én platform, udviklet til efterskoler, frie fagskoler og specialskoler.
           </p>
           
-          {/* Email Signup Form - Updated for JavaScript submission */}
+          {/* Email Signup Form - Updated for MailerLite */}
           <div className="max-w-md mx-auto mb-8">
             <div className="flex flex-col sm:flex-row gap-4">
               <Input
@@ -211,7 +214,7 @@ const Index = () => {
                 id="waitlist-btn"
                 type="button"
                 onClick={handleEmailSubmit}
-                disabled={isSubmitting || isSubmitted || !email}
+                disabled={isSubmitting || isSubmitted || !email.trim()}
                 className={`
                   px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform shadow-lg hover:shadow-xl
                   ${isSubmitted 
