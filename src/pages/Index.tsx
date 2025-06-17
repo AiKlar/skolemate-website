@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -335,7 +334,8 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 border-t border-gray-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <a 
+          <div className="flex justify-center mb-4">
+            <a 
               href="https://aiklar.dk" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -347,10 +347,8 @@ const Index = () => {
                 className="h-8"
               />
             </a>
-          <p className="text-gray-400 mb-8">SkoleMate er udviklet af <a href="https://aiklar.dk">AiKlar</a> © 2025. Alle rettigheder forbeholdes.</p>
-          
-          {/* AiKlar Section */}
-          
+          </div>
+          <p className="text-gray-400">SkoleMate er udviklet af <a href="https://aiklar.dk" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">AiKlar</a> © 2025. Alle rettigheder forbeholdes.</p>
         </div>
       </footer>
 
