@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -137,7 +138,7 @@ const Index = () => {
         "Øget læringsudbytte & selvværd"
       ],
       layout: "image-right",
-      image: null
+      image: "/lovable-uploads/c95715b1-bc38-48e1-87f9-a0f8116eba3d.png"
     }
   ];
 
