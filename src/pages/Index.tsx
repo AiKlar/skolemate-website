@@ -1,8 +1,8 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import confetti from 'canvas-confetti';
 
 const Index = () => {
@@ -159,6 +159,21 @@ const Index = () => {
       ],
       layout: "image-right",
       image: "/lovable-uploads/c95715b1-bc38-48e1-87f9-a0f8116eba3d.png"
+    }
+  ];
+
+  const carouselImages = [
+    {
+      src: "/lovable-uploads/665e1814-19d9-4ee1-a4f7-759c7bb7575a.png",
+      alt: "Generering af forløb og materiale"
+    },
+    {
+      src: "/lovable-uploads/418ce7f5-4190-4b81-9133-6c49a30d801b.png",
+      alt: "Elevens foretrukne digitale assistent"
+    },
+    {
+      src: "/lovable-uploads/d4b1c8d4-2a61-4e64-823b-24e6d97cc1ec.png",
+      alt: "Intelligente inklusions værktøjer"
     }
   ];
 
@@ -343,6 +358,43 @@ const Index = () => {
           ))}
         </div>
       </div>
+
+      {/* Carousel Section */}
+      <section className="py-32 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16">
+            Nogle af SkoleMate's features
+          </h2>
+          
+          <div className="relative">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {carouselImages.map((image, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1">
+                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-auto object-contain rounded-2xl"
+                        />
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="bg-gray-800/50 border-gray-700/50 text-white hover:bg-gray-700/50" />
+              <CarouselNext className="bg-gray-800/50 border-gray-700/50 text-white hover:bg-gray-700/50" />
+            </Carousel>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section id="kontakt" className="py-32 relative">
