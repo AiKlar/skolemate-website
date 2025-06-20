@@ -132,7 +132,7 @@ const Index = () => {
   const features = [
     {
       title: "Lærens højre hånd i forberedelse og undervisning",
-      description: "Generering af forløb og materiale",
+      description: "Generering af forløb og materiale med oceaner af muligheder, altid med læren i føresædet",
       icon: <BookOpen className="w-8 h-8" />,
       bullets: [
         "Målrettet interaktiv undervisning giver højere engagement og bedre læring",
@@ -159,13 +159,13 @@ const Index = () => {
       image: "/lovable-uploads/9db3cda9-9df3-415d-861c-97bbb5a5e6e5.png"
     },
     {
-      title: "Kommunikation & opgavestyring",
-      description: "SkoleMate samler beskeder, opgaver og struktur ét sted. Intuitivt for elever – effektivt for lærere – værdifuldt for ledelse.",
+      title: "SkoleMateRialer – bygget af jer, til jer",
+      description: "Med SkoleMate får du adgang til et levende og voksende materialebibliotek hvor undervisere deler det bedste fra deres AI-genererede undervisningsforløb og opgaver. Det er videndeling i praksis, styrket af AI og bygget på det fællesskab, som SkoleMate skaber på tværs af skoler.",
       icon: <ClipboardList className="w-8 h-8" />,
       bullets: [
-        "Ledelse får unikt indblik med data",
-        "Lærere udsender opgaver i ét flow",
-        "Elever får klar struktur & feedback"
+        "Alle undervisere, der bruger platformen, bidrager automatisk til biblioteket – og du får adgang til det hele.",
+        "Find inspiration, tilpas eksisterende indhold, eller genbrug færdige forløb med få klik.",
+        "Spar tid, og styrk fagligheden gennem kollektiv intelligens og erfaringsdeling."
       ],
       layout: "image-left",
       image: "/lovable-uploads/73b53312-7252-4594-be0e-2ae28a8bc10d.png"
@@ -177,7 +177,7 @@ const Index = () => {
       bullets: [
         "Differentieret læring for alle",
         "AI-støtte til ADHD, autisme og dysleksi",
-        "Øget læringsudbytte & selvværd"
+        "Øget læringsudbytte & trivsel"
       ],
       layout: "image-right",
       image: "/lovable-uploads/c95715b1-bc38-48e1-87f9-a0f8116eba3d.png"
