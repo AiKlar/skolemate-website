@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -168,7 +169,7 @@ const Index = () => {
         "Spar tid, og styrk fagligheden gennem kollektiv intelligens og erfaringsdeling."
       ],
       layout: "image-left",
-      image: "/lovable-uploads/73b53312-7252-4594-be0e-2ae28a8bc10d.png"
+      image: "/lovable-uploads/55e8b1fa-23d1-42df-a5f9-aa2ecc88542b.png"
     },
     {
       title: "Inklusionsværktøjer (AI)",
