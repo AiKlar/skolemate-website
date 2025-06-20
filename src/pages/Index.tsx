@@ -145,11 +145,12 @@ const Index = () => {
       image: "/lovable-uploads/e8a6f097-5019-4bda-855b-5d919a8e6256.png"
     },
     {
-      title: "Integreret AI-chatbot med skolens info",
+      title: "Elevens foretrukne digitale assistent i faghjælp, praktik, skolen og skolens værdier.",
       description: "Én chatbot – tæt integreret med skolens retningslinjer, dagligdag og værdier. Den hjælper både elever, lærere og ledelse med at finde svar hurtigt.",
       icon: <MessageCircle className="w-8 h-8" />,
       bullets: [
         "Bedre opstart for elever",
+        "Faghjælp og støtte uden løsninger",
         "Formidler kultur & politikker",
         "Svar på regler, faglige spørgsmål",
         "Trivsel & inklusion for elever"
