@@ -241,9 +241,9 @@ const Index = () => {
           <div className="mb-8 inline-block">
             <div className="flex items-center justify-center gap-4 mb-4">
               <img 
-                src="/lovable-uploads/fa300389-3414-40cd-a970-bf94fe4d42ff.png" 
+                src="/lovable-uploads/6f090dc4-de62-42f9-8278-5e2b85d62cea.png" 
                 alt="SkoleMate Logo" 
-                className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24"
+                className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28"
               />
               <div className="bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight">
                 SkoleMate
