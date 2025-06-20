@@ -1,9 +1,9 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from '@/components/ui/carousel';
+import ContactForm from '@/components/ContactForm';
 import confetti from 'canvas-confetti';
 
 const Index = () => {
@@ -434,25 +434,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section id="kontakt" className="py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-green-400/20"></div>
-        <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Klar til at opleve SkoleMate?
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Få en personlig demo og se forskellen på egen skole.
-          </p>
-          <a
-            href="mailto:info@aiklar.dk"
-            className="inline-flex items-center px-12 py-6 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-lg rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-green-500/25"
-          >
-            <Mail className="mr-3 w-6 h-6" />
-            Kontakt os
-          </a>
-        </div>
-      </section>
+      {/* Contact Form Section - Replace the old CTA section */}
+      <ContactForm />
 
       {/* Footer */}
       <footer className="py-12 border-t border-gray-800/50">
