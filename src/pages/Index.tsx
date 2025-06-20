@@ -396,7 +396,7 @@ const Index = () => {
             Nogle af SkoleMate's features
           </h2>
           
-          <div className="relative py-16">
+          <div className="relative py-8">
             <Carousel
               setApi={setCarouselApi}
               opts={{
@@ -406,29 +406,23 @@ const Index = () => {
               }}
               className="w-full max-w-5xl mx-auto"
             >
-              <CarouselContent className="-ml-4 md:-ml-8">
+              <CarouselContent className="-ml-2 md:-ml-4">
                 {carouselImages.map((image, index) => (
-                  <CarouselItem key={index} className="pl-4 md:pl-8 basis-4/5 md:basis-3/5 lg:basis-1/2">
-                    <div className="p-12">
-                      <div 
-                        className={`bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50 h-full transition-all duration-500 ${
-                          activeSlide === index 
-                            ? 'transform scale-125 opacity-100 z-20 relative' 
-                            : 'transform scale-75 opacity-50 z-10'
-                        }`}
-                      >
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-11/12 md:basis-4/5 lg:basis-1/2">
+                    <div className="p-2 md:p-4">
+                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-2 md:p-4 shadow-2xl border border-gray-700/50 h-full">
                         <img
                           src={image.src}
                           alt={image.alt}
-                          className="w-full h-auto object-contain rounded-2xl transition-transform duration-500"
+                          className="w-full h-auto object-contain rounded-2xl"
                         />
                       </div>
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="bg-gray-800/80 border-gray-700/50 text-white hover:bg-gray-700/80 -left-12 h-12 w-12" />
-              <CarouselNext className="bg-gray-800/80 border-gray-700/50 text-white hover:bg-gray-700/80 -right-12 h-12 w-12" />
+              <CarouselPrevious className="bg-gray-800/80 border-gray-700/50 text-white hover:bg-gray-700/80 -left-4 md:-left-12 h-8 w-8 md:h-12 md:w-12" />
+              <CarouselNext className="bg-gray-800/80 border-gray-700/50 text-white hover:bg-gray-700/80 -right-4 md:-right-12 h-8 w-8 md:h-12 md:w-12" />
             </Carousel>
           </div>
         </div>
