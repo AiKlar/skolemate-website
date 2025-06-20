@@ -143,10 +143,10 @@ const Index = () => {
         "Et opgør med den klassiske lektionsplan"
       ],
       layout: "image-left",
-      image: "/lovable-uploads/9db86486-cfa7-403e-a45b-3bf68a233bc1.png"
+      image: "/lovable-uploads/ce9149e1-b437-48b2-ad9e-b19c3a48e65c.png"
     },
     {
-      title: "integreret AI-chatbot med skolens info",
+      title: "Integreret AI-chatbot med skolens info",
       description: "Én chatbot – tæt integreret med skolens retningslinjer, dagligdag og værdier. Den hjælper både elever, lærere og ledelse med at finde svar hurtigt.",
       icon: <MessageCircle className="w-8 h-8" />,
       bullets: [
@@ -331,7 +331,7 @@ const Index = () => {
                           {feature.icon}
                         </div>
                         <div>
-                          <h3 className="text-2xl sm:text-3xl font-bold mb-2">{feature.title}</h3>
+                          <h3 className="text-2xl sm:text-3xl font-bold mb-2 leading-relaxed">{feature.title}</h3>
                         </div>
                       </div>
                       
