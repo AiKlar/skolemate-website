@@ -352,7 +352,7 @@ const Index = () => {
                   <div className={`${feature.layout === 'image-right' ? 'lg:col-start-1' : ''}`}>
                     <div className="relative">
                       {feature.image ? (
-                        <div className="w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                        <div className="w-full">
                           <img
                             src={feature.image}
                             alt={feature.title}
