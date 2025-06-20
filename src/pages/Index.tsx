@@ -131,13 +131,16 @@ const Index = () => {
 
   const features = [
     {
-      title: "AI-generering af forløb & materiale",
-      description: "SkoleMate genererer lektionsplaner og undervisningsmateriale med få klik – tilpasset skolens rammer og den enkelte elevs behov.",
+      title: "Lærens højre hånd i forberedelse og undervisning",
+      description: "Generering af forløb og materiale",
       icon: <BookOpen className="w-8 h-8" />,
       bullets: [
-        "Ledelse: rammesætning og indblik → overblik & kvalitet",
-        "Lærer: Mindre copy/paste, mere af alt det der giver mening", 
-        "Elever: målrettet interaktiv undervisning → højere engagement og bedre læring"
+        "Målrettet interaktiv undervisning giver højere engagement og bedre læring",
+        "Mindre copy/paste, mere af alt det der giver mening", 
+        "Meget lette ændringer så undervisning passer til virkelighed",
+        "Feedback fra elever indbygget",
+        "Validering mod standarder",
+        "Et opgør med den klassiske lektionsplan"
       ],
       layout: "image-left",
       image: "/lovable-uploads/9db86486-cfa7-403e-a45b-3bf68a233bc1.png"
