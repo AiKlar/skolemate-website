@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -132,7 +131,7 @@ const Index = () => {
   const features = [
     {
       title: "Lærens højre hånd i forberedelse og undervisning",
-      description: "Generering af forløb og materiale med oceaner af muligheder, altid med læren i føresædet",
+      description: "Generering af forløb og materiale",
       icon: <BookOpen className="w-8 h-8" />,
       bullets: [
         "Målrettet interaktiv undervisning giver højere engagement og bedre læring",
@@ -143,7 +142,7 @@ const Index = () => {
         "Et opgør med den klassiske lektionsplan"
       ],
       layout: "image-left",
-      image: "/lovable-uploads/ce9149e1-b437-48b2-ad9e-b19c3a48e65c.png"
+      image: "/lovable-uploads/e8a6f097-5019-4bda-855b-5d919a8e6256.png"
     },
     {
       title: "Integreret AI-chatbot med skolens info",
