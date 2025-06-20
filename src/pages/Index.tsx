@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -380,7 +379,7 @@ const Index = () => {
                 {carouselImages.map((image, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-4/5 md:basis-3/5 lg:basis-1/2">
                     <div className="p-1">
-                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50 h-full transition-all duration-500 hover:scale-105 carousel-item">
+                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50 h-full transition-all duration-500 carousel-item">
                         <img
                           src={image.src}
                           alt={image.alt}
@@ -463,20 +462,14 @@ const Index = () => {
         }
         
         .carousel-item {
-          transform: scale(0.85);
-          opacity: 0.6;
+          transform: scale(0.8);
+          opacity: 0.5;
           transition: all 0.5s ease-in-out;
-        }
-        
-        .carousel-item:hover,
-        [data-active="true"] .carousel-item {
-          transform: scale(1);
-          opacity: 1;
         }
         
         /* Target the center/active slide */
         [aria-current="true"] .carousel-item {
-          transform: scale(1.1) !important;
+          transform: scale(1.2) !important;
           opacity: 1 !important;
           z-index: 10;
         }
