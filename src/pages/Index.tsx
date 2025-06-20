@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -182,7 +180,7 @@ const Index = () => {
         "Øget læringsudbytte & trivsel"
       ],
       layout: "image-right",
-      image: "/lovable-uploads/c95715b1-bc38-48e1-87f9-a0f8116eba3d.png"
+      image: "/lovable-uploads/8b1d29bb-b75e-44e4-8319-d384fbd59673.png"
     }
   ];
 
@@ -511,4 +509,3 @@ const Index = () => {
 };
 
 export default Index;
-
