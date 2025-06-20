@@ -380,11 +380,11 @@ const Index = () => {
                 {carouselImages.map((image, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-4/5 md:basis-3/5 lg:basis-1/2">
                     <div className="p-1">
-                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50 h-full">
+                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50 h-full transition-all duration-500 hover:scale-105 carousel-item">
                         <img
                           src={image.src}
                           alt={image.alt}
-                          className="w-full h-auto object-contain rounded-2xl"
+                          className="w-full h-auto object-contain rounded-2xl transition-transform duration-500"
                         />
                       </div>
                     </div>
@@ -460,6 +460,25 @@ const Index = () => {
           50% {
             box-shadow: 0 0 0 10px rgba(119, 242, 161, 0);
           }
+        }
+        
+        .carousel-item {
+          transform: scale(0.85);
+          opacity: 0.6;
+          transition: all 0.5s ease-in-out;
+        }
+        
+        .carousel-item:hover,
+        [data-active="true"] .carousel-item {
+          transform: scale(1);
+          opacity: 1;
+        }
+        
+        /* Target the center/active slide */
+        [aria-current="true"] .carousel-item {
+          transform: scale(1.1) !important;
+          opacity: 1 !important;
+          z-index: 10;
         }
         
         @media (max-width: 1024px) {
