@@ -1,4 +1,5 @@
 
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -238,8 +239,15 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto">
           <div className="mb-8 inline-block">
-            <div className="bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight">
-              SkoleMate
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <img 
+                src="/lovable-uploads/fa300389-3414-40cd-a970-bf94fe4d42ff.png" 
+                alt="SkoleMate Logo" 
+                className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24"
+              />
+              <div className="bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight">
+                SkoleMate
+              </div>
             </div>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
@@ -503,3 +511,4 @@ const Index = () => {
 };
 
 export default Index;
+
