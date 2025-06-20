@@ -467,8 +467,17 @@ const Index = () => {
           transition: all 0.5s ease-in-out;
         }
         
-        /* Target the center/active slide */
-        [aria-current="true"] .carousel-item {
+        /* Target the center/active slide using embla's active class */
+        .embla__slide--active .carousel-item,
+        [data-active="true"] .carousel-item,
+        .embla__slide.is-selected .carousel-item {
+          transform: scale(1.2) !important;
+          opacity: 1 !important;
+          z-index: 10;
+        }
+        
+        /* Alternative targeting for center slide */
+        .embla__container .embla__slide:nth-child(2) .carousel-item {
           transform: scale(1.2) !important;
           opacity: 1 !important;
           z-index: 10;
