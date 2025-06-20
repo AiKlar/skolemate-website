@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from '@/components/ui/carousel';
 import confetti from 'canvas-confetti';
 
 const Index = () => {
@@ -11,6 +11,8 @@ const Index = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [animatedSections, setAnimatedSections] = useState<Set<string>>(new Set());
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
     // Setup intersection observer for scroll animations
@@ -39,6 +41,22 @@ const Index = () => {
       observerRef.current?.disconnect();
     };
   }, [animatedSections]);
+
+  // Track carousel active slide
+  useEffect(() => {
+    if (!carouselApi) return;
+
+    const updateActiveSlide = () => {
+      setActiveSlide(carouselApi.selectedScrollSnap());
+    };
+
+    carouselApi.on('select', updateActiveSlide);
+    updateActiveSlide(); // Set initial active slide
+
+    return () => {
+      carouselApi.off('select', updateActiveSlide);
+    };
+  }, [carouselApi]);
 
   const triggerFireworks = () => {
     const duration = 3000;
@@ -368,6 +386,7 @@ const Index = () => {
           
           <div className="relative">
             <Carousel
+              setApi={setCarouselApi}
               opts={{
                 align: "center",
                 loop: true,
@@ -379,7 +398,13 @@ const Index = () => {
                 {carouselImages.map((image, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-4/5 md:basis-3/5 lg:basis-1/2">
                     <div className="p-1">
-                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50 h-full transition-all duration-500 carousel-item">
+                      <div 
+                        className={`bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50 h-full transition-all duration-500 ${
+                          activeSlide === index 
+                            ? 'transform scale-110 opacity-100 z-10' 
+                            : 'transform scale-80 opacity-60'
+                        }`}
+                      >
                         <img
                           src={image.src}
                           alt={image.alt}
@@ -459,28 +484,6 @@ const Index = () => {
           50% {
             box-shadow: 0 0 0 10px rgba(119, 242, 161, 0);
           }
-        }
-        
-        .carousel-item {
-          transform: scale(0.8);
-          opacity: 0.5;
-          transition: all 0.5s ease-in-out;
-        }
-        
-        /* Target the center/active slide using embla's active class */
-        .embla__slide--active .carousel-item,
-        [data-active="true"] .carousel-item,
-        .embla__slide.is-selected .carousel-item {
-          transform: scale(1.2) !important;
-          opacity: 1 !important;
-          z-index: 10;
-        }
-        
-        /* Alternative targeting for center slide */
-        .embla__container .embla__slide:nth-child(2) .carousel-item {
-          transform: scale(1.2) !important;
-          opacity: 1 !important;
-          z-index: 10;
         }
         
         @media (max-width: 1024px) {
