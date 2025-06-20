@@ -385,7 +385,7 @@ const Index = () => {
             Nogle af SkoleMate's features
           </h2>
           
-          <div className="relative py-8">
+          <div className="relative py-16">
             <Carousel
               setApi={setCarouselApi}
               opts={{
@@ -398,7 +398,7 @@ const Index = () => {
               <CarouselContent className="-ml-4 md:-ml-8">
                 {carouselImages.map((image, index) => (
                   <CarouselItem key={index} className="pl-4 md:pl-8 basis-4/5 md:basis-3/5 lg:basis-1/2">
-                    <div className="p-8">
+                    <div className="p-12">
                       <div 
                         className={`bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50 h-full transition-all duration-500 ${
                           activeSlide === index 
