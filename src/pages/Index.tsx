@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -369,16 +370,17 @@ const Index = () => {
           <div className="relative">
             <Carousel
               opts={{
-                align: "start",
+                align: "center",
                 loop: true,
+                slidesToScroll: 1,
               }}
-              className="w-full"
+              className="w-full max-w-5xl mx-auto"
             >
-              <CarouselContent>
+              <CarouselContent className="-ml-2 md:-ml-4">
                 {carouselImages.map((image, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-4/5 md:basis-3/5 lg:basis-1/2">
                     <div className="p-1">
-                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50">
+                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50 h-full">
                         <img
                           src={image.src}
                           alt={image.alt}
@@ -389,8 +391,8 @@ const Index = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="bg-gray-800/50 border-gray-700/50 text-white hover:bg-gray-700/50" />
-              <CarouselNext className="bg-gray-800/50 border-gray-700/50 text-white hover:bg-gray-700/50" />
+              <CarouselPrevious className="bg-gray-800/80 border-gray-700/50 text-white hover:bg-gray-700/80 -left-12 h-12 w-12" />
+              <CarouselNext className="bg-gray-800/80 border-gray-700/50 text-white hover:bg-gray-700/80 -right-12 h-12 w-12" />
             </Carousel>
           </div>
         </div>
