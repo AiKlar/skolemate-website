@@ -239,10 +239,10 @@ const Index = () => {
             </div>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-            AI-platformen til fremtidens skole
+            Hele skolens AI-assistent
           </h1>
           <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            AI i praksis – udviklet til efterskoler, frie fagskoler og specialskoler.
+            Ikke bare en chatbot – en intelligent AI-platform til lærere, elever og ledelse, skabt til at forstå og styrke jeres måde at lave skole på.
           </p>
           
           {/* Waitlist description - moved above form and shortened */}
