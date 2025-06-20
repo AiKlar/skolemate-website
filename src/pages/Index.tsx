@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -156,7 +157,7 @@ const Index = () => {
         "Trivsel & inklusion for elever"
       ],
       layout: "image-right",
-      image: "/lovable-uploads/9db3cda9-9df3-415d-861c-97bbb5a5e6e5.png"
+      image: "/lovable-uploads/ee4585e2-6665-4af7-9825-bdc330690a25.png"
     },
     {
       title: "SkoleMateRialer – bygget af jer, til jer",
