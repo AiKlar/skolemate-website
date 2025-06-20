@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -394,15 +395,15 @@ const Index = () => {
               }}
               className="w-full max-w-5xl mx-auto"
             >
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-4 md:-ml-8">
                 {carouselImages.map((image, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-4/5 md:basis-3/5 lg:basis-1/2">
-                    <div className="p-1">
+                  <CarouselItem key={index} className="pl-4 md:pl-8 basis-4/5 md:basis-3/5 lg:basis-1/2">
+                    <div className="p-2">
                       <div 
                         className={`bg-gray-800/50 backdrop-blur-sm rounded-3xl p-4 shadow-2xl border border-gray-700/50 h-full transition-all duration-500 ${
                           activeSlide === index 
-                            ? 'transform scale-110 opacity-100 z-10' 
-                            : 'transform scale-80 opacity-60'
+                            ? 'transform scale-125 opacity-100 z-20 relative' 
+                            : 'transform scale-75 opacity-50 z-10'
                         }`}
                       >
                         <img
