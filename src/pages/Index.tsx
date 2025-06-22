@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -240,7 +241,7 @@ const Index = () => {
           <div className="mb-8 inline-block">
             <div className="flex items-center justify-center gap-4 mb-4">
               <img 
-                src="/lovable-uploads/6f090dc4-de62-42f9-8278-5e2b85d62cea.png" 
+                src="/lovable-uploads/586954e4-2ecc-42b5-a6e5-4600bd722db7.png" 
                 alt="SkoleMate Logo" 
                 className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28"
               />
