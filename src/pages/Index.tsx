@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,7 +5,6 @@ import { Input } from '@/components/ui/input';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from '@/components/ui/carousel';
 import ContactForm from '@/components/ContactForm';
 import confetti from 'canvas-confetti';
-
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [email, setEmail] = useState('');
@@ -15,11 +13,10 @@ const Index = () => {
   const [animatedSections, setAnimatedSections] = useState<Set<string>>(new Set());
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [activeSlide, setActiveSlide] = useState(0);
-
   useEffect(() => {
     // Setup intersection observer for scroll animations
-    observerRef.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    observerRef.current = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           const sectionId = entry.target.getAttribute('data-section-id');
           if (sectionId && !animatedSections.has(sectionId)) {
@@ -35,10 +32,9 @@ const Index = () => {
 
     // Observe all feature sections
     const sections = document.querySelectorAll('.feature-section');
-    sections.forEach((section) => {
+    sections.forEach(section => {
       observerRef.current?.observe(section);
     });
-
     return () => {
       observerRef.current?.disconnect();
     };
@@ -47,11 +43,9 @@ const Index = () => {
   // Track carousel active slide
   useEffect(() => {
     if (!carouselApi) return;
-
     const updateActiveSlide = () => {
       setActiveSlide(carouselApi.selectedScrollSnap());
     };
-
     carouselApi.on('select', updateActiveSlide);
     updateActiveSlide(); // Set initial active slide
 
@@ -59,64 +53,65 @@ const Index = () => {
       carouselApi.off('select', updateActiveSlide);
     };
   }, [carouselApi]);
-
   const triggerFireworks = () => {
     const duration = 3000;
     const animationEnd = Date.now() + duration;
-    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
+    const defaults = {
+      startVelocity: 30,
+      spread: 360,
+      ticks: 60,
+      zIndex: 0
+    };
     function randomInRange(min: number, max: number) {
       return Math.random() * (max - min) + min;
     }
-
-    const interval = setInterval(function() {
+    const interval = setInterval(function () {
       const timeLeft = animationEnd - Date.now();
-
       if (timeLeft <= 0) {
         return clearInterval(interval);
       }
-
       const particleCount = 50 * (timeLeft / duration);
-      
+
       // Left side
       confetti({
         ...defaults,
         particleCount,
-        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+        origin: {
+          x: randomInRange(0.1, 0.3),
+          y: Math.random() - 0.2
+        }
       });
-      
+
       // Right side
       confetti({
         ...defaults,
         particleCount,
-        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+        origin: {
+          x: randomInRange(0.7, 0.9),
+          y: Math.random() - 0.2
+        }
       });
     }, 250);
   };
-
   const handleEmailSubmit = async () => {
     if (!email.trim()) return;
-    
     setIsSubmitting(true);
-    
     const formData = new FormData();
     formData.append('fields[email]', email.trim());
     formData.append('ml-submit', '1');
     formData.append('anticsrf', 'true');
-
     try {
       const response = await fetch('https://assets.mailerlite.com/jsonp/1455812/forms/157482125464962296/subscribe', {
         method: 'POST',
         body: formData,
         mode: 'no-cors' // MailerLite handles CORS differently
       });
-      
       console.log('Email submitted to MailerLite:', email);
       setIsSubmitted(true);
-      
+
       // Trigger fireworks
       triggerFireworks();
-      
+
       // Reset after 3 seconds
       setTimeout(() => {
         setIsSubmitting(false);
@@ -129,80 +124,46 @@ const Index = () => {
       // Could add error handling here if needed
     }
   };
-
-  const features = [
-    {
-      title: "Lærens højre hånd i forberedelse og undervisning",
-      description: "Generering af forløb og materiale",
-      icon: <BookOpen className="w-8 h-8" />,
-      bullets: [
-        "Målrettet interaktiv undervisning giver højere engagement og bedre læring",
-        "Mindre copy/paste, mere af alt det der giver mening", 
-        "Meget lette ændringer så undervisning passer til virkelighed",
-        "Feedback fra elever indbygget",
-        "Validering mod standarder",
-        "Et opgør med den klassiske lektionsplan"
-      ],
-      layout: "image-left",
-      image: "/lovable-uploads/e8a6f097-5019-4bda-855b-5d919a8e6256.png"
-    },
-    {
-      title: "Elevens foretrukne digitale assistent i faghjælp, praktik, skolen og skolens værdier.",
-      description: "Én chatbot – tæt integreret med skolens retningslinjer, dagligdag og værdier. Den hjælper både elever, lærere og ledelse med at finde svar hurtigt.",
-      icon: <MessageCircle className="w-8 h-8" />,
-      bullets: [
-        "Bedre opstart for elever",
-        "Faghjælp og støtte uden løsninger",
-        "Formidler kultur & politikker",
-        "Svar på regler, faglige spørgsmål",
-        "Trivsel & inklusion for elever"
-      ],
-      layout: "image-right",
-      image: "/lovable-uploads/ee4585e2-6665-4af7-9825-bdc330690a25.png"
-    },
-    {
-      title: "SkoleMateRialer – bygget af jer, til jer",
-      description: "Med SkoleMate får du adgang til et levende og voksende materialebibliotek hvor undervisere deler det bedste fra deres AI-genererede undervisningsforløb og opgaver. Det er videndeling i praksis, styrket af AI og bygget på det fællesskab, som SkoleMate skaber på tværs af skoler.",
-      icon: <ClipboardList className="w-8 h-8" />,
-      bullets: [
-        "Alle undervisere, der bruger platformen, bidrager automatisk til biblioteket – og du får adgang til det hele.",
-        "Find inspiration, tilpas eksisterende indhold, eller genbrug færdige forløb med få klik.",
-        "Spar tid, og styrk fagligheden gennem kollektiv intelligens og erfaringsdeling."
-      ],
-      layout: "image-left",
-      image: "/lovable-uploads/55e8b1fa-23d1-42df-a5f9-aa2ecc88542b.png"
-    },
-    {
-      title: "Inklusionsværktøjer (AI)",
-      description: "AI-værktøjer tilpasser materiale og læringsstil til elever med fx ordblindhed, ADHD eller autisme – uden ekstra arbejde for læreren.",
-      icon: <Heart className="w-8 h-8" />,
-      bullets: [
-        "Differentieret læring for alle",
-        "AI-støtte til ADHD, autisme og dysleksi",
-        "Øget læringsudbytte & trivsel"
-      ],
-      layout: "image-right",
-      image: "/lovable-uploads/8b1d29bb-b75e-44e4-8319-d384fbd59673.png"
-    }
-  ];
-
-  const carouselImages = [
-    {
-      src: "/lovable-uploads/665e1814-19d9-4ee1-a4f7-759c7bb7575a.png",
-      alt: "Generering af forløb og materiale"
-    },
-    {
-      src: "/lovable-uploads/418ce7f5-4190-4b81-9133-6c49a30d801b.png",
-      alt: "Elevens foretrukne digitale assistent"
-    },
-    {
-      src: "/lovable-uploads/d4b1c8d4-2a61-4e64-823b-24e6d97cc1ec.png",
-      alt: "Intelligente inklusions værktøjer"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
+  const features = [{
+    title: "Lærens højre hånd i forberedelse og undervisning",
+    description: "Generering af forløb og materiale",
+    icon: <BookOpen className="w-8 h-8" />,
+    bullets: ["Målrettet interaktiv undervisning giver højere engagement og bedre læring", "Mindre copy/paste, mere af alt det der giver mening", "Meget lette ændringer så undervisning passer til virkelighed", "Feedback fra elever indbygget", "Validering mod standarder", "Et opgør med den klassiske lektionsplan"],
+    layout: "image-left",
+    image: "/lovable-uploads/e8a6f097-5019-4bda-855b-5d919a8e6256.png"
+  }, {
+    title: "Elevens foretrukne digitale assistent i faghjælp, praktik, skolen og skolens værdier.",
+    description: "Én chatbot – tæt integreret med skolens retningslinjer, dagligdag og værdier. Den hjælper både elever, lærere og ledelse med at finde svar hurtigt.",
+    icon: <MessageCircle className="w-8 h-8" />,
+    bullets: ["Bedre opstart for elever", "Faghjælp og støtte uden løsninger", "Formidler kultur & politikker", "Svar på regler, faglige spørgsmål", "Trivsel & inklusion for elever"],
+    layout: "image-right",
+    image: "/lovable-uploads/ee4585e2-6665-4af7-9825-bdc330690a25.png"
+  }, {
+    title: "SkoleMateRialer – bygget af jer, til jer",
+    description: "Med SkoleMate får du adgang til et levende og voksende materialebibliotek hvor undervisere deler det bedste fra deres AI-genererede undervisningsforløb og opgaver. Det er videndeling i praksis, styrket af AI og bygget på det fællesskab, som SkoleMate skaber på tværs af skoler.",
+    icon: <ClipboardList className="w-8 h-8" />,
+    bullets: ["Alle undervisere, der bruger platformen, bidrager automatisk til biblioteket – og du får adgang til det hele.", "Find inspiration, tilpas eksisterende indhold, eller genbrug færdige forløb med få klik.", "Spar tid, og styrk fagligheden gennem kollektiv intelligens og erfaringsdeling."],
+    layout: "image-left",
+    image: "/lovable-uploads/55e8b1fa-23d1-42df-a5f9-aa2ecc88542b.png"
+  }, {
+    title: "Inklusionsværktøjer (AI)",
+    description: "AI-værktøjer tilpasser materiale og læringsstil til elever med fx ordblindhed, ADHD eller autisme – uden ekstra arbejde for læreren.",
+    icon: <Heart className="w-8 h-8" />,
+    bullets: ["Differentieret læring for alle", "AI-støtte til ADHD, autisme og dysleksi", "Øget læringsudbytte & trivsel"],
+    layout: "image-right",
+    image: "/lovable-uploads/8b1d29bb-b75e-44e4-8319-d384fbd59673.png"
+  }];
+  const carouselImages = [{
+    src: "/lovable-uploads/665e1814-19d9-4ee1-a4f7-759c7bb7575a.png",
+    alt: "Generering af forløb og materiale"
+  }, {
+    src: "/lovable-uploads/418ce7f5-4190-4b81-9133-6c49a30d801b.png",
+    alt: "Elevens foretrukne digitale assistent"
+  }, {
+    src: "/lovable-uploads/d4b1c8d4-2a61-4e64-823b-24e6d97cc1ec.png",
+    alt: "Intelligente inklusions værktøjer"
+  }];
+  return <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
       {/* Hidden form for Netlify registration */}
       <form name="waitlist" data-netlify="true" netlify-honeypot="bot-field" hidden>
         <input type="email" name="email" />
@@ -210,12 +171,7 @@ const Index = () => {
 
       {/* Login Button - Responsive positioning */}
       <div className="fixed top-6 right-6 z-50 lg:block hidden">
-        <a
-          href="https://app.skolemate.dk"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
-        >
+        <a href="https://app.skolemate.dk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
           <LogIn className="mr-2 w-4 h-4" />
           Login
         </a>
@@ -223,12 +179,7 @@ const Index = () => {
 
       {/* Login Button - Mobile (bottom right) */}
       <div className="fixed bottom-6 right-6 z-50 lg:hidden block">
-        <a
-          href="https://app.skolemate.dk"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
-        >
+        <a href="https://app.skolemate.dk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
           <LogIn className="mr-2 w-4 h-4" />
           Login
         </a>
@@ -243,11 +194,7 @@ const Index = () => {
               <div className="relative">
                 {/* Northern Lights Glow Effect */}
                 <div className="absolute inset-0 rounded-full aurora-glow"></div>
-                <img 
-                  src="/lovable-uploads/586954e4-2ecc-42b5-a6e5-4600bd722db7.png" 
-                  alt="SkoleMate Logo" 
-                  className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28"
-                />
+                <img src="/lovable-uploads/586954e4-2ecc-42b5-a6e5-4600bd722db7.png" alt="SkoleMate Logo" className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28" />
               </div>
               <div className="bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight">
                 SkoleMate
@@ -257,9 +204,7 @@ const Index = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
             Hele skolens AI-assistent
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Ikke bare en chatbot – en intelligent AI-platform til lærere, elever og ledelse, skabt til at forstå og styrke jeres måde at lave skole på.
-          </p>
+          <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">Ikke bare en chatbot – men en intelligent AI-platform til lærere, elever og ledelse, skabt til at forstå og styrke jeres måde at lave skole på.</p>
           
           {/* Waitlist description - moved above form and shortened */}
           <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
@@ -269,46 +214,19 @@ const Index = () => {
           {/* Email Signup Form - Updated for MailerLite */}
           <div className="max-w-md mx-auto mb-8">
             <div className="flex flex-col sm:flex-row gap-4">
-              <Input
-                type="email"
-                id="waitlist-email"
-                name="fields[email]"
-                placeholder="Din email adresse"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                disabled={isSubmitting || isSubmitted}
-                className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-green-400 disabled:opacity-50"
-              />
-              <Button
-                id="waitlist-btn"
-                type="button"
-                onClick={handleEmailSubmit}
-                disabled={isSubmitting || isSubmitted || !email.trim()}
-                className={`
+              <Input type="email" id="waitlist-email" name="fields[email]" placeholder="Din email adresse" value={email} onChange={e => setEmail(e.target.value)} required disabled={isSubmitting || isSubmitted} className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-green-400 disabled:opacity-50" />
+              <Button id="waitlist-btn" type="button" onClick={handleEmailSubmit} disabled={isSubmitting || isSubmitted || !email.trim()} className={`
                   px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform shadow-lg hover:shadow-xl
-                  ${isSubmitted 
-                    ? 'bg-green-600 hover:bg-green-600 scale-105' 
-                    : isSubmitting 
-                      ? 'bg-gray-600 hover:bg-gray-600' 
-                      : 'bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 hover:scale-105'
-                  }
+                  ${isSubmitted ? 'bg-green-600 hover:bg-green-600 scale-105' : isSubmitting ? 'bg-gray-600 hover:bg-gray-600' : 'bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 hover:scale-105'}
                   text-white
-                `}
-              >
-                {isSubmitted ? (
-                  <div className="flex items-center animate-in fade-in-0 zoom-in-95 duration-300">
+                `}>
+                {isSubmitted ? <div className="flex items-center animate-in fade-in-0 zoom-in-95 duration-300">
                     <Check className="w-5 h-5 mr-2" />
                     Tilmeldt!
-                  </div>
-                ) : isSubmitting ? (
-                  <div className="flex items-center">
+                  </div> : isSubmitting ? <div className="flex items-center">
                     <div className="w-5 h-5 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                     Tilmelder...
-                  </div>
-                ) : (
-                  'Skriv dig op på venteliste'
-                )}
+                  </div> : 'Skriv dig op på venteliste'}
               </Button>
             </div>
           </div>
@@ -327,12 +245,7 @@ const Index = () => {
         
         {/* Features Sections */}
         <div className="space-y-32 py-32">
-          {features.map((feature, index) => (
-            <section 
-              key={index} 
-              className="feature-section relative opacity-0 transform translate-y-12 scale-95 transition-all duration-700"
-              data-section-id={`feature-${index}`}
-            >
+          {features.map((feature, index) => <section key={index} className="feature-section relative opacity-0 transform translate-y-12 scale-95 transition-all duration-700" data-section-id={`feature-${index}`}>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className={`grid lg:grid-cols-2 gap-16 items-center ${feature.layout === 'image-right' ? 'lg:grid-flow-col-dense' : ''}`}>
                   
@@ -351,12 +264,10 @@ const Index = () => {
                       <p className="text-gray-300 text-lg leading-relaxed mb-6">{feature.description}</p>
                       
                       <ul className="space-y-4">
-                        {feature.bullets.map((bullet, i) => (
-                          <li key={i} className="flex items-start">
+                        {feature.bullets.map((bullet, i) => <li key={i} className="flex items-start">
                             <div className="w-2 h-2 bg-green-400 rounded-full mt-3 mr-4 flex-shrink-0"></div>
                             <span className="text-gray-300 text-lg leading-relaxed">{bullet}</span>
-                          </li>
-                        ))}
+                          </li>)}
                       </ul>
                     </div>
                   </div>
@@ -364,19 +275,11 @@ const Index = () => {
                   {/* Image */}
                   <div className={`${feature.layout === 'image-right' ? 'lg:col-start-1' : ''}`}>
                     <div className="relative">
-                      {feature.image ? (
-                        <div className="w-full">
-                          <img
-                            src={feature.image}
-                            alt={feature.title}
-                            className="w-full h-auto object-contain"
-                          />
-                        </div>
-                      ) : (
-                        <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-green-400/20 rounded-3xl backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                      {feature.image ? <div className="w-full">
+                          <img src={feature.image} alt={feature.title} className="w-full h-auto object-contain" />
+                        </div> : <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-green-400/20 rounded-3xl backdrop-blur-sm border border-white/10 flex items-center justify-center">
                           <div className="text-6xl opacity-50">{feature.icon}</div>
-                        </div>
-                      )}
+                        </div>}
                       {/* Floating elements for visual interest */}
                       <div className="absolute -top-4 -right-4 w-12 h-12 bg-green-400/30 rounded-full blur-sm"></div>
                       <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-500/30 rounded-full blur-md"></div>
@@ -389,8 +292,7 @@ const Index = () => {
                   <div className="w-6 h-6 bg-green-400 rounded-full border-4 border-slate-900 shadow-lg timeline-node"></div>
                 </div>
               </div>
-            </section>
-          ))}
+            </section>)}
         </div>
       </div>
 
@@ -402,29 +304,19 @@ const Index = () => {
           </h2>
           
           <div className="relative py-8">
-            <Carousel
-              setApi={setCarouselApi}
-              opts={{
-                align: "center",
-                loop: true,
-                slidesToScroll: 1,
-              }}
-              className="w-full max-w-5xl mx-auto"
-            >
+            <Carousel setApi={setCarouselApi} opts={{
+            align: "center",
+            loop: true,
+            slidesToScroll: 1
+          }} className="w-full max-w-5xl mx-auto">
               <CarouselContent className="-ml-2 md:-ml-4">
-                {carouselImages.map((image, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-11/12 md:basis-4/5 lg:basis-1/2">
+                {carouselImages.map((image, index) => <CarouselItem key={index} className="pl-2 md:pl-4 basis-11/12 md:basis-4/5 lg:basis-1/2">
                     <div className="p-2 md:p-4">
                       <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-2 md:p-4 shadow-2xl border border-gray-700/50 h-full">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-full h-auto object-contain rounded-2xl"
-                        />
+                        <img src={image.src} alt={image.alt} className="w-full h-auto object-contain rounded-2xl" />
                       </div>
                     </div>
-                  </CarouselItem>
-                ))}
+                  </CarouselItem>)}
               </CarouselContent>
               <CarouselPrevious className="bg-gray-800/80 border-gray-700/50 text-white hover:bg-gray-700/80 -left-4 md:-left-12 h-8 w-8 md:h-12 md:w-12" />
               <CarouselNext className="bg-gray-800/80 border-gray-700/50 text-white hover:bg-gray-700/80 -right-4 md:-right-12 h-8 w-8 md:h-12 md:w-12" />
@@ -440,17 +332,8 @@ const Index = () => {
       <footer className="py-12 border-t border-gray-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-4">
-            <a 
-              href="https://aiklar.dk" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="transition-opacity hover:opacity-80"
-            >
-              <img 
-                src="/lovable-uploads/ee644135-8145-4e97-8a09-dab655b25d72.png" 
-                alt="AiKlar" 
-                className="h-8"
-              />
+            <a href="https://aiklar.dk" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
+              <img src="/lovable-uploads/ee644135-8145-4e97-8a09-dab655b25d72.png" alt="AiKlar" className="h-8" />
             </a>
           </div>
           <p className="text-gray-400">SkoleMate er udviklet af <a href="https://aiklar.dk" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">AiKlar</a> © 2025. Alle rettigheder forbeholdes.</p>
@@ -527,8 +410,6 @@ const Index = () => {
           }
         }
       `}</style>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
