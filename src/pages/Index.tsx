@@ -240,11 +240,15 @@ const Index = () => {
         <div className="relative z-10 text-center max-w-4xl mx-auto">
           <div className="mb-8 inline-block">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <img 
-                src="/lovable-uploads/586954e4-2ecc-42b5-a6e5-4600bd722db7.png" 
-                alt="SkoleMate Logo" 
-                className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28"
-              />
+              <div className="relative">
+                {/* Northern Lights Glow Effect */}
+                <div className="absolute inset-0 rounded-full aurora-glow"></div>
+                <img 
+                  src="/lovable-uploads/586954e4-2ecc-42b5-a6e5-4600bd722db7.png" 
+                  alt="SkoleMate Logo" 
+                  className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28"
+                />
+              </div>
               <div className="bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight">
                 SkoleMate
               </div>
@@ -465,6 +469,46 @@ const Index = () => {
         
         .timeline-node {
           animation: pulse 2s infinite;
+        }
+        
+        .aurora-glow {
+          background: conic-gradient(
+            from 0deg at 50% 50%,
+            #00ff88,
+            #0066ff,
+            #6600ff,
+            #ff0066,
+            #ff6600,
+            #ffff00,
+            #00ff88
+          );
+          animation: aurora-rotate 8s linear infinite;
+          filter: blur(20px);
+          opacity: 0.6;
+          transform: scale(1.5);
+        }
+        
+        @keyframes aurora-rotate {
+          0% {
+            transform: scale(1.5) rotate(0deg);
+            filter: blur(20px) hue-rotate(0deg);
+          }
+          25% {
+            transform: scale(1.7) rotate(90deg);
+            filter: blur(25px) hue-rotate(90deg);
+          }
+          50% {
+            transform: scale(1.5) rotate(180deg);
+            filter: blur(20px) hue-rotate(180deg);
+          }
+          75% {
+            transform: scale(1.8) rotate(270deg);
+            filter: blur(30px) hue-rotate(270deg);
+          }
+          100% {
+            transform: scale(1.5) rotate(360deg);
+            filter: blur(20px) hue-rotate(360deg);
+          }
         }
         
         @keyframes pulse {
