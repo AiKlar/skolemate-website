@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from '@/components/ui/carousel';
 import ContactForm from '@/components/ContactForm';
 import confetti from 'canvas-confetti';
+
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [email, setEmail] = useState('');
@@ -13,6 +14,7 @@ const Index = () => {
   const [animatedSections, setAnimatedSections] = useState<Set<string>>(new Set());
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [activeSlide, setActiveSlide] = useState(0);
+
   useEffect(() => {
     // Setup intersection observer for scroll animations
     observerRef.current = new IntersectionObserver(entries => {
@@ -53,6 +55,7 @@ const Index = () => {
       carouselApi.off('select', updateActiveSlide);
     };
   }, [carouselApi]);
+
   const triggerFireworks = () => {
     const duration = 3000;
     const animationEnd = Date.now() + duration;
@@ -93,6 +96,7 @@ const Index = () => {
       });
     }, 250);
   };
+
   const handleEmailSubmit = async () => {
     if (!email.trim()) return;
     setIsSubmitting(true);
@@ -124,6 +128,7 @@ const Index = () => {
       // Could add error handling here if needed
     }
   };
+
   const features = [{
     title: "Lærens højre hånd i forberedelse og undervisning",
     description: "Generering af forløb og materiale",
@@ -153,6 +158,7 @@ const Index = () => {
     layout: "image-right",
     image: "/lovable-uploads/8b1d29bb-b75e-44e4-8319-d384fbd59673.png"
   }];
+
   const carouselImages = [{
     src: "/lovable-uploads/665e1814-19d9-4ee1-a4f7-759c7bb7575a.png",
     alt: "Generering af forløb og materiale"
@@ -163,6 +169,7 @@ const Index = () => {
     src: "/lovable-uploads/d4b1c8d4-2a61-4e64-823b-24e6d97cc1ec.png",
     alt: "Intelligente inklusions værktøjer"
   }];
+
   return <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
       {/* Hidden form for Netlify registration */}
       <form name="waitlist" data-netlify="true" netlify-honeypot="bot-field" hidden>
@@ -229,6 +236,14 @@ const Index = () => {
                   </div> : 'Skriv dig op på venteliste'}
               </Button>
             </div>
+          </div>
+
+          {/* Danish Flag and Text */}
+          <div className="flex flex-col items-center gap-4 mb-8">
+            <img src="/lovable-uploads/f0ee8ef2-e794-41ab-a8e9-bb5cab1dbc0a.png" alt="Danmarks flag" className="w-16 h-12 object-contain" />
+            <p className="text-sm text-gray-400 font-medium">
+              Udviklet til skoler i Danmark
+            </p>
           </div>
         </div>
         
@@ -412,4 +427,5 @@ const Index = () => {
       `}</style>
     </div>;
 };
+
 export default Index;
