@@ -155,7 +155,7 @@ const Index = () => {
     layout: "image-right",
     image: "/lovable-uploads/3c38a539-d455-45e3-acc9-6f947b15959c.png"
   }, {
-    title: "SkoleMateRialer – bygget af jer, til jer",
+    title: "SkoleMateRialer – fælles viden, formet af jeres praksis",
     description: "Med SkoleMate får du adgang til et levende og voksende materialebibliotek hvor undervisere deler det bedste fra deres AI-genererede undervisningsforløb og opgaver. Det er videndeling i praksis, styrket af AI og bygget på det fællesskab, som SkoleMate skaber på tværs af skoler.",
     icon: <ClipboardList className="w-8 h-8" />,
     bullets: ["Alle undervisere, der bruger platformen, bidrager automatisk til biblioteket – og du får adgang til det hele.", "Find inspiration, tilpas eksisterende indhold, eller genbrug færdige forløb med få klik.", "Spar tid, og styrk fagligheden gennem kollektiv intelligens og erfaringsdeling."],
