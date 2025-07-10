@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -188,7 +186,7 @@ const Index = () => {
       "Ensartet og værdiforankret undervisning - Alt AI-genereret materiale bygger på skolens værdier, retningslinjer og fælles mål – og sikrer en professionel og sammenhængende faglig linje.",
       "Styrket skoleudvikling med datagrundlag - Brug platformens samlede indsigt til at evaluere indsatsområder, trivselstiltag og faglig progression på skoleniveau."
     ],
-    layout: "image-left",
+    layout: "image-right",
     image: "/lovable-uploads/55f63cdf-945e-42d2-92dc-b92a1752a3c1.png"
   }];
 
