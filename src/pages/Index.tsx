@@ -154,7 +154,7 @@ const Index = () => {
       "Styrket deltagelse i fællesskabet - SkoleMate bidrager til at gøre undervisningen mere inkluderende, så flere elever føler sig set og forstået – også udenfor klasseværelset.",
       "Reduceret læringsstress - Ved at tilbyde struktur, forudsigelighed og ekstra forklaringer mindskes frustration og overbelastning hos sårbare elever."
     ],
-    layout: "image-right",
+    layout: "image-left",
     image: "/lovable-uploads/a189e3e9-e3c8-4c54-afb3-a1467d0dc551.png"
   }, {
     title: "Lærens højre hånd i forberedelse og undervisning",
