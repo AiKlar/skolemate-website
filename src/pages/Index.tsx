@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -177,7 +176,7 @@ const Index = () => {
       "Reduceret læringsstress - Ved at tilbyde struktur, forudsigelighed og ekstra forklaringer mindskes frustration og overbelastning hos sårbare elever."
     ],
     layout: "image-right",
-    image: "/lovable-uploads/8b1d29bb-b75e-44e4-8319-d384fbd59673.png"
+    image: "/lovable-uploads/a189e3e9-e3c8-4c54-afb3-a1467d0dc551.png"
   }];
 
   const carouselImages = [{
