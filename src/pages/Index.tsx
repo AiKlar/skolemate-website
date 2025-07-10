@@ -142,7 +142,7 @@ const Index = () => {
     icon: <MessageCircle className="w-8 h-8" />,
     bullets: ["Bedre opstart for elever", "Faghjælp og støtte uden løsninger", "Formidler kultur & politikker", "Svar på regler, faglige spørgsmål", "Trivsel & inklusion for elever"],
     layout: "image-right",
-    image: "/lovable-uploads/ee4585e2-6665-4af7-9825-bdc330690a25.png"
+    image: "/lovable-uploads/3c38a539-d455-45e3-acc9-6f947b15959c.png"
   }, {
     title: "SkoleMateRialer – bygget af jer, til jer",
     description: "Med SkoleMate får du adgang til et levende og voksende materialebibliotek hvor undervisere deler det bedste fra deres AI-genererede undervisningsforløb og opgaver. Det er videndeling i praksis, styrket af AI og bygget på det fællesskab, som SkoleMate skaber på tværs af skoler.",
