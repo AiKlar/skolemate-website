@@ -177,6 +177,17 @@ const Index = () => {
     ],
     layout: "image-right",
     image: "/lovable-uploads/a189e3e9-e3c8-4c54-afb3-a1467d0dc551.png"
+  }, {
+    title: "Ledelsens indsigt og kvalitetssikring",
+    description: "SkoleMate giver skolens ledelse nye muligheder for at styrke kvalitet, trivsel og strategisk overblik – uden at forstyrre det pædagogiske arbejde.",
+    icon: <ClipboardList className="w-8 h-8" />,
+    bullets: [
+      "Indblik i elevernes trivsel og behov - Gennem anonymiseret data om chatbot-interaktioner får ledelsen indsigt i mønstre, spørgsmål og potentielle trivselsudfordringer.",
+      "Ensartet og værdiforankret undervisning - Alt AI-genereret materiale bygger på skolens værdier, retningslinjer og fælles mål – og sikrer en professionel og sammenhængende faglig linje.",
+      "Styrket skoleudvikling med datagrundlag - Brug platformens samlede indsigt til at evaluere indsatsområder, trivselstiltag og faglig progression på skoleniveau."
+    ],
+    layout: "image-left",
+    image: "/lovable-uploads/55f63cdf-945e-42d2-92dc-b92a1752a3c1.png"
   }];
 
   const carouselImages = [{
