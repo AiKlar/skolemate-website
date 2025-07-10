@@ -131,7 +131,7 @@ const Index = () => {
 
   const features = [{
     title: "Lærens højre hånd i forberedelse og undervisning",
-    description: "Generering af forløb og materiale",
+    description: "SkoleMate hjælper dig med at planlægge og gennemføre undervisning, der passer til netop dine elever – hurtigt og nemt",
     icon: <BookOpen className="w-8 h-8" />,
     bullets: [
       "Generér hele forløb eller enkeltopgaver på få sekunder - Fra temaforløb til enkeltlektioner – SkoleMate skaber undervisningsindholdet for dig med udgangspunkt i dine valg om fag, niveau og læringsmål.",
