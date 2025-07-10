@@ -140,7 +140,13 @@ const Index = () => {
     title: "Elevens foretrukne AI-assistent i fag, fritid og fællesskab",
     description: "SkoleMate er tæt integreret i jeres skolekultur og giver eleverne hjælp til opgaver, praksisforløb, samværsregler og trivsel. Tilpasset skolens værdier og pædagogik.",
     icon: <MessageCircle className="w-8 h-8" />,
-    bullets: ["Bedre opstart for elever", "Faghjælp og støtte uden løsninger", "Formidler kultur & politikker", "Svar på regler, faglige spørgsmål", "Trivsel & inklusion for elever"],
+    bullets: [
+      "En god start på skoleåret - Optimerer overgangen til efterskoleliv for alle elever med interaktivt opstartforløb",
+      "Faghjælp på elevens niveau - Svarer på faglige spørgsmål uden at give løsninger – støtter elevens egen tænkning og udvikling.",
+      "Støtte i hverdagen på skolen - Hjælper med praktiske spørgsmål som måltider, samværsregler, rengøring og skemandringar.",
+      "Formidler skolens kultur og værdier - Forklarer skolens retningslinjer, traditioner og holdninger på en inkluderende og forståelig måde.",
+      "Trivsel og selvhjælp - Giver elever adgang til råd om trivsel, konflikthåndtering og hvordan man søger hjælp – på deres egne præmisser."
+    ],
     layout: "image-right",
     image: "/lovable-uploads/3c38a539-d455-45e3-acc9-6f947b15959c.png"
   }, {
@@ -294,7 +300,25 @@ const Index = () => {
                       <ul className="space-y-4">
                         {feature.bullets.map((bullet, i) => <li key={i} className="flex items-start">
                             <div className="w-2 h-2 bg-green-400 rounded-full mt-3 mr-4 flex-shrink-0"></div>
-                            <span className="text-gray-300 text-lg leading-relaxed">{bullet}</span>
+                            <span className="text-gray-300 text-lg leading-relaxed">
+                              {index === 1 ? (
+                                // Special formatting for the second feature with checkmarks and green highlights
+                                <>
+                                  <Check className="inline w-4 h-4 mr-2" style={{ color: '#77F2A1' }} />
+                                  {bullet.split(' - ').map((part, partIndex) => (
+                                    partIndex === 0 ? (
+                                      <span key={partIndex} style={{ color: '#77F2A1' }} className="font-semibold">
+                                        {part}
+                                      </span>
+                                    ) : (
+                                      <span key={partIndex}> - {part}</span>
+                                    )
+                                  ))}
+                                </>
+                              ) : (
+                                bullet
+                              )}
+                            </span>
                           </li>)}
                       </ul>
                     </div>
