@@ -133,7 +133,12 @@ const Index = () => {
     title: "Lærens højre hånd i forberedelse og undervisning",
     description: "Generering af forløb og materiale",
     icon: <BookOpen className="w-8 h-8" />,
-    bullets: ["Målrettet interaktiv undervisning giver højere engagement og bedre læring", "Mindre copy/paste, mere af alt det der giver mening", "Meget lette ændringer så undervisning passer til virkelighed", "Feedback fra elever indbygget", "Validering mod standarder", "Et opgør med den klassiske lektionsplan"],
+    bullets: [
+      "Generér hele forløb eller enkeltopgaver på få sekunder - Fra temaforløb til enkeltlektioner – SkoleMate skaber undervisningsindholdet for dig med udgangspunkt i dine valg om fag, niveau og læringsmål.",
+      "Inddrag skolens værdier og praksisnære emner - Integrér trivsel, fællesskab, elevindragelse og praktik i undervisningen – uden ekstra forberedelsestid.",
+      "Tilpasset elevernes behov – automatisk - SkoleMate differentierer indholdet efter læringsstil, fagligt niveau og behov – og sikrer samtidig faglig validering med faglige mål og pædagogisk retning.",
+      "Et opgør med den klassiske lektionsplan - Smart modulopbygget interface gør det let at justere, kombinere og tilpasse – skabt til virkeligheden."
+    ],
     layout: "image-left",
     image: "/lovable-uploads/e8a6f097-5019-4bda-855b-5d919a8e6256.png"
   }, {
