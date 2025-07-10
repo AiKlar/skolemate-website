@@ -244,7 +244,7 @@ const Index = () => {
               {/* Danish Flag */}
               <div className="flex flex-col items-center gap-2">
                 <img src="/lovable-uploads/f0ee8ef2-e794-41ab-a8e9-bb5cab1dbc0a.png" alt="Danmarks flag" className="w-32 h-24 object-contain" />
-                <p className="text-sm text-gray-400 font-medium text-center">
+                <p className="text-sm text-gray-400 font-medium text-center uppercase">
                   Udviklet til skoler i Danmark
                 </p>
               </div>
