@@ -166,7 +166,7 @@ const Index = () => {
     layout: "image-left",
     image: "/lovable-uploads/da23df65-a6f6-471e-a5ba-fd1b885b5665.png"
   }, {
-    title: "Inklusionsværktøjer (AI)",
+    title: "Inklusionsværktøjer og øget trivsel",
     description: "AI-værktøjer tilpasser materiale og læringsstil til elever med fx ordblindhed, ADHD eller autisme – uden ekstra arbejde for læreren.",
     icon: <Heart className="w-8 h-8" />,
     bullets: ["Differentieret læring for alle", "AI-støtte til ADHD, autisme og dysleksi", "Øget læringsudbytte & trivsel"],
