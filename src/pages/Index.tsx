@@ -140,7 +140,7 @@ const Index = () => {
       "Et opgør med den klassiske lektionsplan - Smart modulopbygget interface gør det let at justere, kombinere og tilpasse – skabt til virkeligheden."
     ],
     layout: "image-left",
-    image: "/lovable-uploads/e8a6f097-5019-4bda-855b-5d919a8e6256.png"
+    image: "/lovable-uploads/29b7d796-9bc0-4b34-80fc-566f104d6409.png"
   }, {
     title: "Elevens foretrukne AI-assistent i fag, fritid og fællesskab",
     description: "SkoleMate er tæt integreret i jeres skolekultur og giver eleverne hjælp til opgaver, praksisforløb, samværsregler og trivsel. Tilpasset skolens værdier og pædagogik.",
