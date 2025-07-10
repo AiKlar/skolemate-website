@@ -166,7 +166,7 @@ const Index = () => {
       "Tilpasset elevernes behov – automatisk - SkoleMate differentierer indholdet efter læringsstil, fagligt niveau og behov – og sikrer samtidig faglig validering med faglige mål og pædagogisk retning.",
       "Et opgør med den klassiske lektionsplan - Smart modulopbygget interface gør det let at justere, kombinere og tilpasse – skabt til virkeligheden."
     ],
-    layout: "image-left",
+    layout: "image-right",
     image: "/lovable-uploads/29b7d796-9bc0-4b34-80fc-566f104d6409.png"
   }, {
     title: "SkoleMateRialer – fælles viden, formet af jeres praksis",
