@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -240,7 +241,7 @@ const Index = () => {
 
           {/* Danish Flag and Text */}
           <div className="flex flex-col items-center gap-4 mb-8">
-            <img src="/lovable-uploads/f0ee8ef2-e794-41ab-a8e9-bb5cab1dbc0a.png" alt="Danmarks flag" className="w-16 h-12 object-contain" />
+            <img src="/lovable-uploads/f0ee8ef2-e794-41ab-a8e9-bb5cab1dbc0a.png" alt="Danmarks flag" className="w-32 h-24 object-contain" />
             <p className="text-sm text-gray-400 font-medium">
               Udviklet til skoler i Danmark
             </p>
