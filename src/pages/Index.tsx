@@ -304,40 +304,45 @@ const Index = () => {
                       
                       <ul className="space-y-4">
                         {feature.bullets.map((bullet, i) => <li key={i} className="flex items-start">
-                            <div className="w-2 h-2 bg-green-400 rounded-full mt-3 mr-4 flex-shrink-0"></div>
-                            <span className="text-gray-300 text-lg leading-relaxed">
-                              {index === 0 ? (
-                                // Special formatting for the first feature with checkmarks and green highlights
-                                <>
-                                  <Check className="inline w-4 h-4 mr-2" style={{ color: '#77F2A1' }} />
-                                  {bullet.split(' - ').map((part, partIndex) => (
-                                    partIndex === 0 ? (
-                                      <span key={partIndex} style={{ color: '#77F2A1' }} className="font-semibold">
-                                        {part}
-                                      </span>
-                                    ) : (
-                                      <span key={partIndex}> - {part}</span>
-                                    )
-                                  ))}
-                                </>
-                              ) : index === 1 ? (
-                                // Special formatting for the second feature with checkmarks and green highlights
-                                <>
-                                  <Check className="inline w-4 h-4 mr-2" style={{ color: '#77F2A1' }} />
-                                  {bullet.split(' - ').map((part, partIndex) => (
-                                    partIndex === 0 ? (
-                                      <span key={partIndex} style={{ color: '#77F2A1' }} className="font-semibold">
-                                        {part}
-                                      </span>
-                                    ) : (
-                                      <span key={partIndex}> - {part}</span>
-                                    )
-                                  ))}
-                                </>
-                              ) : (
-                                bullet
-                              )}
-                            </span>
+                            {index === 0 ? (
+                              // First feature - no bullet dot, just checkmark and green highlighting
+                              <span className="text-gray-300 text-lg leading-relaxed">
+                                <Check className="inline w-4 h-4 mr-2" style={{ color: '#77F2A1' }} />
+                                {bullet.split(' - ').map((part, partIndex) => (
+                                  partIndex === 0 ? (
+                                    <span key={partIndex} style={{ color: '#77F2A1' }} className="font-semibold">
+                                      {part}
+                                    </span>
+                                  ) : (
+                                    <span key={partIndex}> - {part}</span>
+                                  )
+                                ))}
+                              </span>
+                            ) : (
+                              // Other features - keep the bullet dot
+                              <>
+                                <div className="w-2 h-2 bg-green-400 rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                                <span className="text-gray-300 text-lg leading-relaxed">
+                                  {index === 1 ? (
+                                    // Special formatting for the second feature with checkmarks and green highlights
+                                    <>
+                                      <Check className="inline w-4 h-4 mr-2" style={{ color: '#77F2A1' }} />
+                                      {bullet.split(' - ').map((part, partIndex) => (
+                                        partIndex === 0 ? (
+                                          <span key={partIndex} style={{ color: '#77F2A1' }} className="font-semibold">
+                                            {part}
+                                          </span>
+                                        ) : (
+                                          <span key={partIndex}> - {part}</span>
+                                        )
+                                      ))}
+                                    </>
+                                  ) : (
+                                    bullet
+                                  )}
+                                </span>
+                              </>
+                            )}
                           </li>)}
                       </ul>
                     </div>
