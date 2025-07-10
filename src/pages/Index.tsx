@@ -1,4 +1,5 @@
 
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -131,18 +132,6 @@ const Index = () => {
   };
 
   const features = [{
-    title: "Lærens højre hånd i forberedelse og undervisning",
-    description: "SkoleMate hjælper dig med at planlægge og gennemføre undervisning, der passer til netop dine elever – hurtigt og nemt",
-    icon: <BookOpen className="w-8 h-8" />,
-    bullets: [
-      "Generér hele forløb eller enkeltopgaver på få sekunder - Fra temaforløb til enkeltlektioner – SkoleMate skaber undervisningsindholdet for dig med udgangspunkt i dine valg om fag, niveau og læringsmål.",
-      "Inddrag skolens værdier og praksisnære emner - Integrér trivsel, fællesskab, elevindragelse og praktik i undervisningen – uden ekstra forberedelsestid.",
-      "Tilpasset elevernes behov – automatisk - SkoleMate differentierer indholdet efter læringsstil, fagligt niveau og behov – og sikrer samtidig faglig validering med faglige mål og pædagogisk retning.",
-      "Et opgør med den klassiske lektionsplan - Smart modulopbygget interface gør det let at justere, kombinere og tilpasse – skabt til virkeligheden."
-    ],
-    layout: "image-left",
-    image: "/lovable-uploads/29b7d796-9bc0-4b34-80fc-566f104d6409.png"
-  }, {
     title: "Elevens foretrukne AI-assistent i fag, fritid og fællesskab",
     description: "SkoleMate er tæt integreret i jeres skolekultur og giver eleverne hjælp til opgaver, praksisforløb, samværsregler og trivsel. Tilpasset skolens værdier og pædagogik.",
     icon: <MessageCircle className="w-8 h-8" />,
@@ -156,17 +145,6 @@ const Index = () => {
     layout: "image-right",
     image: "/lovable-uploads/3c38a539-d455-45e3-acc9-6f947b15959c.png"
   }, {
-    title: "SkoleMateRialer – fælles viden, formet af jeres praksis",
-    description: "Med SkoleMate får du adgang til et levende og voksende materialebibliotek hvor undervisere deler det bedste fra deres AI-genererede undervisningsforløb og opgaver. Det er videndeling i praksis, styrket af AI og bygget på det fællesskab, som SkoleMate skaber på tværs af skoler.",
-    icon: <ClipboardList className="w-8 h-8" />,
-    bullets: [
-      "Inspiration på tværs af skoler og fag - Find inspiration, tilpas eksisterende indhold, eller genbrug færdige forløb med få klik.",
-      "Deling uden ekstra arbejde - Når du bruger SkoleMate, bidrager du automatisk til materialebiblioteket. Du deler kun det, du selv har genereret, og vælger selv, hvad der kan ses af andre.",
-      "Tilpas med få klik - Alle forløb kan tilpasses nemt til din kontekst, klassetrin og skolens værdier"
-    ],
-    layout: "image-left",
-    image: "/lovable-uploads/da23df65-a6f6-471e-a5ba-fd1b885b5665.png"
-  }, {
     title: "Inklusionsværktøjer og øget trivsel",
     description: "SkoleMate fremmer trivsel og inklusion ved at tilpasse undervisningen til den enkelte elevs behov – styrker både læring, trivsel og fællesskab",
     icon: <Heart className="w-8 h-8" />,
@@ -178,6 +156,29 @@ const Index = () => {
     ],
     layout: "image-right",
     image: "/lovable-uploads/a189e3e9-e3c8-4c54-afb3-a1467d0dc551.png"
+  }, {
+    title: "Lærens højre hånd i forberedelse og undervisning",
+    description: "SkoleMate hjælper dig med at planlægge og gennemføre undervisning, der passer til netop dine elever – hurtigt og nemt",
+    icon: <BookOpen className="w-8 h-8" />,
+    bullets: [
+      "Generér hele forløb eller enkeltopgaver på få sekunder - Fra temaforløb til enkeltlektioner – SkoleMate skaber undervisningsindholdet for dig med udgangspunkt i dine valg om fag, niveau og læringsmål.",
+      "Inddrag skolens værdier og praksisnære emner - Integrér trivsel, fællesskab, elevindragelse og praktik i undervisningen – uden ekstra forberedelsestid.",
+      "Tilpasset elevernes behov – automatisk - SkoleMate differentierer indholdet efter læringsstil, fagligt niveau og behov – og sikrer samtidig faglig validering med faglige mål og pædagogisk retning.",
+      "Et opgør med den klassiske lektionsplan - Smart modulopbygget interface gør det let at justere, kombinere og tilpasse – skabt til virkeligheden."
+    ],
+    layout: "image-left",
+    image: "/lovable-uploads/29b7d796-9bc0-4b34-80fc-566f104d6409.png"
+  }, {
+    title: "SkoleMateRialer – fælles viden, formet af jeres praksis",
+    description: "Med SkoleMate får du adgang til et levende og voksende materialebibliotek hvor undervisere deler det bedste fra deres AI-genererede undervisningsforløb og opgaver. Det er videndeling i praksis, styrket af AI og bygget på det fællesskab, som SkoleMate skaber på tværs af skoler.",
+    icon: <ClipboardList className="w-8 h-8" />,
+    bullets: [
+      "Inspiration på tværs af skoler og fag - Find inspiration, tilpas eksisterende indhold, eller genbrug færdige forløb med få klik.",
+      "Deling uden ekstra arbejde - Når du bruger SkoleMate, bidrager du automatisk til materialebiblioteket. Du deler kun det, du selv har genereret, og vælger selv, hvad der kan ses af andre.",
+      "Tilpas med få klik - Alle forløb kan tilpasses nemt til din kontekst, klassetrin og skolens værdier"
+    ],
+    layout: "image-left",
+    image: "/lovable-uploads/da23df65-a6f6-471e-a5ba-fd1b885b5665.png"
   }, {
     title: "Ledelsens indsigt og kvalitetssikring",
     description: "SkoleMate giver skolens ledelse nye muligheder for at styrke kvalitet, trivsel og strategisk overblik – uden at forstyrre det pædagogiske arbejde.",
