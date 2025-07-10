@@ -215,7 +215,7 @@ const Index = () => {
           
           {/* Waitlist description - moved above form and shortened */}
           <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Skriv dig op på ventelisten, og vær en af de første til at prøve SkoleMate.
+            Skriv dig på ventelisten og vær blandt de første til at prøve SkoleMate
           </p>
           
           {/* Email Signup Form - Updated for MailerLite */}
