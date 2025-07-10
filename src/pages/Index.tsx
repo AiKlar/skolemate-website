@@ -252,7 +252,7 @@ const Index = () => {
               {/* EU Flag */}
               <div className="flex flex-col items-center gap-2">
                 <img src="/lovable-uploads/e5081200-479b-4cd2-b3c3-5216f84a0155.png" alt="EU flag" className="w-32 h-24 object-contain" />
-                <p className="text-sm text-gray-400 font-medium text-center">
+                <p className="text-sm text-gray-400 font-medium text-center uppercase">
                   Overholder datasikkerhed og GDPR
                 </p>
               </div>
