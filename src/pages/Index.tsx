@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -158,7 +159,11 @@ const Index = () => {
     title: "SkoleMateRialer – fælles viden, formet af jeres praksis",
     description: "Med SkoleMate får du adgang til et levende og voksende materialebibliotek hvor undervisere deler det bedste fra deres AI-genererede undervisningsforløb og opgaver. Det er videndeling i praksis, styrket af AI og bygget på det fællesskab, som SkoleMate skaber på tværs af skoler.",
     icon: <ClipboardList className="w-8 h-8" />,
-    bullets: ["Alle undervisere, der bruger platformen, bidrager automatisk til biblioteket – og du får adgang til det hele.", "Find inspiration, tilpas eksisterende indhold, eller genbrug færdige forløb med få klik.", "Spar tid, og styrk fagligheden gennem kollektiv intelligens og erfaringsdeling."],
+    bullets: [
+      "Inspiration på tværs af skoler og fag - Find inspiration, tilpas eksisterende indhold, eller genbrug færdige forløb med få klik.",
+      "Deling uden ekstra arbejde - Når du bruger SkoleMate, bidrager du automatisk til materialebiblioteket. Du deler kun det, du selv har genereret, og vælger selv, hvad der kan ses af andre.",
+      "Tilpas med få klik - Alle forløb kan tilpasses nemt til din kontekst, klassetrin og skolens værdier"
+    ],
     layout: "image-left",
     image: "/lovable-uploads/55e8b1fa-23d1-42df-a5f9-aa2ecc88542b.png"
   }, {
@@ -304,8 +309,8 @@ const Index = () => {
                       
                       <ul className="space-y-4">
                         {feature.bullets.map((bullet, i) => <li key={i} className="flex items-start">
-                            {index === 0 || index === 1 ? (
-                              // First and second features - no bullet dot, just checkmark and green highlighting
+                            {index === 0 || index === 1 || index === 2 ? (
+                              // First three features - no bullet dot, just checkmark and green highlighting
                               <span className="text-gray-300 text-lg leading-relaxed">
                                 <Check className="inline w-4 h-4 mr-2" style={{ color: '#77F2A1' }} />
                                 {bullet.split(' - ').map((part, partIndex) => (
