@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -324,8 +325,8 @@ const Index = () => {
                       
                       <ul className="space-y-4">
                         {feature.bullets.map((bullet, i) => <li key={i} className="flex items-start">
-                            {index === 0 || index === 1 || index === 2 || index === 3 ? (
-                              // All features - checkmark and green highlighting for the first part
+                            {index === 0 || index === 1 || index === 2 || index === 3 || index === 4 ? (
+                              // All features including the new leadership section - checkmark and green highlighting for the first part
                               <span className="text-gray-300 text-lg leading-relaxed">
                                 <Check className="inline w-4 h-4 mr-2" style={{ color: '#77F2A1' }} />
                                 {bullet.split(' - ').map((part, partIndex) => (
