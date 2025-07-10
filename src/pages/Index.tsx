@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -165,7 +164,7 @@ const Index = () => {
       "Tilpas med få klik - Alle forløb kan tilpasses nemt til din kontekst, klassetrin og skolens værdier"
     ],
     layout: "image-left",
-    image: "/lovable-uploads/55e8b1fa-23d1-42df-a5f9-aa2ecc88542b.png"
+    image: "/lovable-uploads/da23df65-a6f6-471e-a5ba-fd1b885b5665.png"
   }, {
     title: "Inklusionsværktøjer (AI)",
     description: "AI-værktøjer tilpasser materiale og læringsstil til elever med fx ordblindhed, ADHD eller autisme – uden ekstra arbejde for læreren.",
