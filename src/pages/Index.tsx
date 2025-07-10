@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, ArrowRight, LogIn, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -169,7 +170,12 @@ const Index = () => {
     title: "Inklusionsværktøjer og øget trivsel",
     description: "SkoleMate fremmer trivsel og inklusion ved at tilpasse undervisningen til den enkelte elevs behov – styrker både læring, trivsel og fællesskab",
     icon: <Heart className="w-8 h-8" />,
-    bullets: ["Differentieret læring for alle", "AI-støtte til ADHD, autisme og dysleksi", "Øget læringsudbytte & trivsel"],
+    bullets: [
+      "Differentieret læring for alle - SkoleMate tilpasser materiale og læringsstil til elever med fx ordblindhed, ADHD eller autisme",
+      "Adaptiv feedback i realtid - Elever får forklaringer og støtte i øjenhøjde – når de har brug for det – baseret på deres læringsmønstre.",
+      "Styrket deltagelse i fællesskabet - SkoleMate bidrager til at gøre undervisningen mere inkluderende, så flere elever føler sig set og forstået – også udenfor klasseværelset.",
+      "Reduceret læringsstress - Ved at tilbyde struktur, forudsigelighed og ekstra forklaringer mindskes frustration og overbelastning hos sårbare elever."
+    ],
     layout: "image-right",
     image: "/lovable-uploads/8b1d29bb-b75e-44e4-8319-d384fbd59673.png"
   }];
@@ -308,8 +314,8 @@ const Index = () => {
                       
                       <ul className="space-y-4">
                         {feature.bullets.map((bullet, i) => <li key={i} className="flex items-start">
-                            {index === 0 || index === 1 || index === 2 ? (
-                              // First three features - no bullet dot, just checkmark and green highlighting
+                            {index === 0 || index === 1 || index === 2 || index === 3 ? (
+                              // All features - checkmark and green highlighting for the first part
                               <span className="text-gray-300 text-lg leading-relaxed">
                                 <Check className="inline w-4 h-4 mr-2" style={{ color: '#77F2A1' }} />
                                 {bullet.split(' - ').map((part, partIndex) => (
@@ -323,7 +329,7 @@ const Index = () => {
                                 ))}
                               </span>
                             ) : (
-                              // Other features - keep the bullet dot
+                              // Fallback - bullet dot (though all features now use checkmarks)
                               <>
                                 <div className="w-2 h-2 bg-green-400 rounded-full mt-3 mr-4 flex-shrink-0"></div>
                                 <span className="text-gray-300 text-lg leading-relaxed">
