@@ -354,9 +354,9 @@ const Index = () => {
 
                   {/* Image */}
                   <div className={`${feature.layout === 'image-right' ? 'lg:col-start-1' : ''}`}>
-                    <div className="relative">
-                      {feature.image ? <div className="w-full">
-                          <img src={feature.image} alt={feature.title} className="w-full h-auto object-contain" />
+                    <div className="relative flex items-center justify-center">
+                      {feature.image ? <div className="w-full flex items-center justify-center">
+                          <img src={feature.image} alt={feature.title} className="w-full h-auto object-contain max-w-full" />
                         </div> : <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-green-400/20 rounded-3xl backdrop-blur-sm border border-white/10 flex items-center justify-center">
                           <div className="text-6xl opacity-50">{feature.icon}</div>
                         </div>}
