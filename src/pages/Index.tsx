@@ -232,7 +232,7 @@ const Index = () => {
               <div className="relative">
                 {/* Northern Lights Glow Effect */}
                 <div className="absolute inset-0 rounded-full aurora-glow"></div>
-                <img src="/lovable-uploads/586954e4-2ecc-42b5-a6e5-4600bd722db7.png" alt="SkoleMate Logo" className="relative z-10 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain" />
+                <img src="/lovable-uploads/586954e4-2ecc-42b5-a6e5-4600bd722db7.png" alt="SkoleMate Logo" className="relative z-10 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-28 lg:h-28 object-contain" />
               </div>
               <div className="bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight">
                 SkoleMate
