@@ -435,7 +435,7 @@ const Index = () => {
             SkoleMate Features
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Discover how SkoleMate transforms education for students, teachers, and leadership
+            Oplev hvordan SkoleMate transformerer uddannelse for elever, lærere og ledelse
           </p>
         </div>
       </section>
