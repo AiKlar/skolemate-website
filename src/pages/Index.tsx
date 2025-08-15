@@ -428,6 +428,18 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Features Section Header */}
+      <section className="py-16 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text">
+            SkoleMate Features
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Discover how SkoleMate transforms education for students, teachers, and leadership
+          </p>
+        </div>
+      </section>
+
       {/* Timeline Container */}
       <div className="relative">
         {/* Central Timeline */}
