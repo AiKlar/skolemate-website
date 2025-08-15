@@ -321,23 +321,15 @@ const Index = () => {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Generel AI-chat</span>
+                  <span className="text-gray-300">Generel AI-chat (Franske: Mistral-7B-v0.1)</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Faghjælp i dansk, matematik m.fl. (på elevens niveau, uden at give løsninger)</span>
+                  <span className="text-gray-300">Faghjælp i dansk, matematik, engelsk m.fl.</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Hjælp til praktiske spørgsmål (måltider, samværsregler, rengøring)</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Formidling af skolens kultur og værdier</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Trivsels- og selvhjælpsværktøjer</span>
+                  <span className="text-gray-300">Understøttende hjælp og vejledning på elevens vilkår uden at give færdige svar og løsninger</span>
                 </li>
               </ul>
               
