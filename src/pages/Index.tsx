@@ -356,27 +356,23 @@ const Index = () => {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Generel AI-chat</span>
+                  <span className="text-gray-300">Generel AI-chat (Franske: Mistral-7B-v0.1)</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Forberedelsesværktøjer: Lektionsplansgenerator, Quizgenerator, Samtalekort, Icebreakers m.m.</span>
+                  <span className="text-gray-300">Forberedelsesværktøjer som Lektionsplansgenerator, Undervisningsforløb, Quizgenerator, Samtalekort, Icebreakers m.fl.</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Differentieret undervisningsindhold efter læringsstil og niveau</span>
+                  <span className="text-gray-300">Differentiér undervisningsindhold og materialer efter læringsstil og niveau</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Integration af skolens værdier og praksisnære emner i undervisningen</span>
+                  <span className="text-gray-300">Skab dit eget indhold og gem i egen materialebank</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Adgang til egen materialebank</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Adgang til SkoleMateRialer – fælles vidensbank fra andre lærere</span>
+                  <span className="text-gray-300">Adgang til SkoleMateRialer – fælles vidensbank udviklet af lærere og undervisere i hele Danmark</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
