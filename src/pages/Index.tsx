@@ -297,6 +297,149 @@ const Index = () => {
         </div>
       </section>
 
+      {/* SkoleMate Plans Section */}
+      <section className="py-32 bg-slate-800 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text">
+              SkoleMate Planer
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Vælg den plan der passer til dine behov - fra elev til ledelse
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            {/* SkoleMate Elev */}
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-700/50 relative">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-white mb-4">SkoleMate Elev</h3>
+                <div className="text-4xl font-extrabold text-green-400 mb-2">Gratis</div>
+                <p className="text-gray-400">For alle elever</p>
+              </div>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Generel AI-chat</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Faghjælp i dansk, matematik m.fl. (på elevens niveau, uden at give løsninger)</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Hjælp til praktiske spørgsmål (måltider, samværsregler, rengøring)</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Formidling af skolens kultur og værdier</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Trivsels- og selvhjælpsværktøjer</span>
+                </li>
+              </ul>
+              
+              <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
+                Kom i gang gratis
+              </Button>
+            </div>
+
+            {/* SkoleMate Lærer */}
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-blue-500/50 relative transform scale-105">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  Mest populær
+                </span>
+              </div>
+              
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-white mb-4">SkoleMate Lærer</h3>
+                <div className="text-4xl font-extrabold text-blue-400 mb-2">49,-</div>
+                <p className="text-gray-400 mb-2">pr. måned</p>
+                <p className="text-green-400 text-sm font-medium">14 dages gratis prøveperiode</p>
+              </div>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Generel AI-chat</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Forberedelsesværktøjer: Lektionsplansgenerator, Quizgenerator, Samtalekort, Icebreakers m.m.</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Differentieret undervisningsindhold efter læringsstil og niveau</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Integration af skolens værdier og praksisnære emner i undervisningen</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Adgang til egen materialebank</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Adgang til SkoleMateRialer – fælles vidensbank fra andre lærere</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Mulighed for at dele og tilpasse materialer</span>
+                </li>
+              </ul>
+              
+              <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
+                Start gratis prøveperiode
+              </Button>
+            </div>
+
+            {/* SkoleMate Organisation */}
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-700/50 relative">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-white mb-4">SkoleMate Organisation</h3>
+                <div className="text-2xl font-bold text-purple-400 mb-2">Kontakt for pris</div>
+                <p className="text-gray-400">For hele organisationen</p>
+              </div>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Alt fra Elev og Lærer-planerne</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Lokal data-integration (RAG-setup) med skolens egne materialer og retningslinjer</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Ledelsesværktøjer til indblik i trivsel og faglig progression (anonymiseret data)</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Ensartet og værdiforankret undervisning på tværs af skolen</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Skræddersyede opstart- og inklusionsforløb</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300">Prioriteret support og onboarding</span>
+                </li>
+              </ul>
+              
+              <Button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
+                Kontakt os
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Timeline Container */}
       <div className="relative">
         {/* Central Timeline */}
