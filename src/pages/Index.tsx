@@ -321,7 +321,7 @@ const Index = () => {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Generel AI-chat (Franske: Mistral-7B-v0.1)</span>
+                  <span className="text-gray-300">Generel AI-chat (EU Hostet high-end AI)</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
@@ -356,7 +356,7 @@ const Index = () => {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300">Generel AI-chat (Franske: Mistral-7B-v0.1)</span>
+                  <span className="text-gray-300">Generel AI-chat (EU Hostet high-end AI)</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
