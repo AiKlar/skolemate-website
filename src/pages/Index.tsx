@@ -525,16 +525,6 @@ const Index = () => {
                 </div>
               </section>
               
-              {/* "Kommer snart" heading after "Lærens højre hånd" feature (index 2) */}
-              {index === 2 && (
-                <section className="py-16 bg-slate-900">
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-                    <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text">
-                      Kommer snart
-                    </h2>
-                  </div>
-                </section>
-              )}
             </React.Fragment>
           ))}
         </div>
