@@ -246,7 +246,7 @@ const Index = () => {
           
           {/* Waitlist description - moved above form and shortened */}
           <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Skriv dig på ventelisten og vær blandt de første til at prøve SkoleMate
+            Tilmeld dig vores nyhedsbrev og få de seneste nyheder direkte i din indbakke
           </p>
           
           {/* Email Signup Form - Updated for MailerLite */}
@@ -264,7 +264,7 @@ const Index = () => {
                   </div> : isSubmitting ? <div className="flex items-center">
                     <div className="w-5 h-5 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                     Tilmelder...
-                  </div> : 'Skriv dig op på venteliste'}
+                  </div> : 'Tilmeld nyhedsbrevet'}
               </Button>
             </div>
           </div>
