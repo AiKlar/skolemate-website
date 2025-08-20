@@ -447,75 +447,96 @@ const Index = () => {
         
         {/* Features Sections */}
         <div className="space-y-32 py-32">
-          {features.map((feature, index) => <section key={index} className="feature-section relative opacity-0 transform translate-y-12 scale-95 transition-all duration-700" data-section-id={`feature-${index}`}>
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className={`grid lg:grid-cols-2 gap-16 items-center ${feature.layout === 'image-right' ? 'lg:grid-flow-col-dense' : ''}`}>
-                  
-                  {/* Content */}
-                  <div className={`${feature.layout === 'image-right' ? 'lg:col-start-2' : ''}`}>
-                    <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-700/50">
-                      <div className="flex items-center mb-6">
-                        <div className="bg-gradient-to-r from-blue-500 to-green-400 p-3 rounded-2xl mr-4">
-                          {feature.icon}
+          {features.map((feature, index) => (
+            <React.Fragment key={index}>
+              <section className="feature-section relative opacity-0 transform translate-y-12 scale-95 transition-all duration-700" data-section-id={`feature-${index}`}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className={`grid lg:grid-cols-2 gap-16 items-center ${feature.layout === 'image-right' ? 'lg:grid-flow-col-dense' : ''}`}>
+                    
+                    {/* Content */}
+                    <div className={`${feature.layout === 'image-right' ? 'lg:col-start-2' : ''}`}>
+                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-700/50">
+                        <div className="flex items-center mb-6">
+                          <div className="bg-gradient-to-r from-blue-500 to-green-400 p-3 rounded-2xl mr-4">
+                            {feature.icon}
+                          </div>
+                          <div>
+                            <h3 className="text-2xl sm:text-3xl font-bold mb-2 leading-relaxed">{feature.title}</h3>
+                          </div>
                         </div>
-                        <div>
-                          <h3 className="text-2xl sm:text-3xl font-bold mb-2 leading-relaxed">{feature.title}</h3>
-                        </div>
-                      </div>
-                      
-                      <p className="text-gray-300 text-lg leading-relaxed mb-6">{feature.description}</p>
-                      
-                      <ul className="space-y-4">
-                        {feature.bullets.map((bullet, i) => <li key={i} className="flex items-start">
-                            {index === 0 || index === 1 || index === 2 || index === 3 || index === 4 ? (
-                              // All features including the new leadership section - checkmark and green highlighting for the first part
-                              <span className="text-gray-300 text-lg leading-relaxed">
-                                <Check className="inline w-4 h-4 mr-2" style={{ color: '#77F2A1' }} />
-                                {bullet.split(' - ').map((part, partIndex) => (
-                                  partIndex === 0 ? (
-                                    <span key={partIndex} style={{ color: '#77F2A1' }} className="font-semibold">
-                                      {part}
-                                    </span>
-                                  ) : (
-                                    <span key={partIndex}> - {part}</span>
-                                  )
-                                ))}
-                              </span>
-                            ) : (
-                              // Fallback - bullet dot (though all features now use checkmarks)
-                              <>
-                                <div className="w-2 h-2 bg-green-400 rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                        
+                        <p className="text-gray-300 text-lg leading-relaxed mb-6">{feature.description}</p>
+                        
+                        <ul className="space-y-4">
+                          {feature.bullets.map((bullet, i) => (
+                            <li key={i} className="flex items-start">
+                              {index === 0 || index === 1 || index === 2 || index === 3 || index === 4 ? (
+                                // All features including the new leadership section - checkmark and green highlighting for the first part
                                 <span className="text-gray-300 text-lg leading-relaxed">
-                                  {bullet}
+                                  <Check className="inline w-4 h-4 mr-2" style={{ color: '#77F2A1' }} />
+                                  {bullet.split(' - ').map((part, partIndex) => (
+                                    partIndex === 0 ? (
+                                      <span key={partIndex} style={{ color: '#77F2A1' }} className="font-semibold">
+                                        {part}
+                                      </span>
+                                    ) : (
+                                      <span key={partIndex}> - {part}</span>
+                                    )
+                                  ))}
                                 </span>
-                              </>
-                            )}
-                          </li>)}
-                      </ul>
+                              ) : (
+                                // Fallback - bullet dot (though all features now use checkmarks)
+                                <>
+                                  <div className="w-2 h-2 bg-green-400 rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                                  <span className="text-gray-300 text-lg leading-relaxed">
+                                    {bullet}
+                                  </span>
+                                </>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Image */}
+                    <div className={`${feature.layout === 'image-right' ? 'lg:col-start-1' : ''}`}>
+                      <div className="relative flex items-start justify-center pt-8">
+                        {feature.image ? (
+                          <div className="w-full flex items-center justify-center">
+                            <img src={feature.image} alt={feature.title} className="w-full h-auto object-contain max-w-full" />
+                          </div>
+                        ) : (
+                          <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-green-400/20 rounded-3xl backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                            <div className="text-6xl opacity-50">{feature.icon}</div>
+                          </div>
+                        )}
+                        {/* Floating elements for visual interest */}
+                        <div className="absolute -top-4 -right-4 w-12 h-12 bg-green-400/30 rounded-full blur-sm"></div>
+                        <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-500/30 rounded-full blur-md"></div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Image */}
-                  <div className={`${feature.layout === 'image-right' ? 'lg:col-start-1' : ''}`}>
-                    <div className="relative flex items-start justify-center pt-8">
-                      {feature.image ? <div className="w-full flex items-center justify-center">
-                          <img src={feature.image} alt={feature.title} className="w-full h-auto object-contain max-w-full" />
-                        </div> : <div className="w-full h-80 bg-gradient-to-br from-blue-500/20 to-green-400/20 rounded-3xl backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                          <div className="text-6xl opacity-50">{feature.icon}</div>
-                        </div>}
-                      {/* Floating elements for visual interest */}
-                      <div className="absolute -top-4 -right-4 w-12 h-12 bg-green-400/30 rounded-full blur-sm"></div>
-                      <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-500/30 rounded-full blur-md"></div>
-                    </div>
+                  {/* Timeline node for desktop */}
+                  <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2">
+                    <div className="w-6 h-6 bg-green-400 rounded-full border-4 border-slate-900 shadow-lg timeline-node"></div>
                   </div>
                 </div>
-
-                {/* Timeline node for desktop */}
-                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2">
-                  <div className="w-6 h-6 bg-green-400 rounded-full border-4 border-slate-900 shadow-lg timeline-node"></div>
-                </div>
-              </div>
-            </section>)}
+              </section>
+              
+              {/* "Kommer snart" heading after "Lærens højre hånd" feature (index 2) */}
+              {index === 2 && (
+                <section className="py-16 bg-slate-900">
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-500 to-green-400 text-transparent bg-clip-text">
+                      Kommer snart
+                    </h2>
+                  </div>
+                </section>
+              )}
+            </React.Fragment>
+          ))}
         </div>
       </div>
 
