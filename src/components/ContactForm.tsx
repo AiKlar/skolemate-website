@@ -68,7 +68,11 @@ const ContactForm = () => {
             Kontakt os
           </h2>
         </div>
-        <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Vi elsker at høre fra jer på skolerne, eller hvis du kunne tænke dig at arbejde sammen med os. Vi giver også meget gerne en personlig demo, så du kan se hvad SkoleMate kunne gøre for jer.</p>
+        <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+          Vi glæder os til at høre fra dig.
+          <br /><br />
+          Hos SkoleMate byder vi alle henvendelser velkommen – uanset om du er lærer, skole eller samarbejdspartner. Del gerne dine tanker, idéer, ris og ros med os, eller kontakt os for at høre mere om, hvordan SkoleMate kan gøre en forskel i jeres hverdag.
+        </p>
         
         <div className="max-w-2xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
