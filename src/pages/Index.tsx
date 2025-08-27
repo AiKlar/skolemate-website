@@ -553,6 +553,10 @@ const Index = () => {
       {/* Carousel Section */}
       <section className="py-32 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+            Vi giver gerne en personlig demo af platformen, så I kan opleve SkoleMate i praksis på jeres skole. Kontakt os allerede i dag og hør nærmere om mulighederne.
+          </p>
+          
           <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16">
             Nogle af SkoleMate's features
           </h2>
