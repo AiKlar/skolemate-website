@@ -558,7 +558,7 @@ const Index = () => {
           </p>
           
           <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16">
-            Nogle af SkoleMate's features
+            SkoleMate SneakPeak
           </h2>
           
           <div className="relative py-8">
