@@ -56,6 +56,13 @@ const Index = () => {
     };
   }, [carouselApi]);
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('kontakt');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const triggerFireworks = () => {
     const duration = 3000;
     const animationEnd = Date.now() + duration;
@@ -430,7 +437,10 @@ const Index = () => {
                 </li>
               </ul>
               
-              <Button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
+              <Button 
+                onClick={scrollToContact}
+                className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105"
+              >
                 Kontakt os
               </Button>
             </div>
