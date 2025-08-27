@@ -350,9 +350,9 @@ const Index = () => {
                 </li>
               </ul>
               
-              <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
+              <a href="https://app.skolemate.dk/accounts/signup/?role=student" target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 inline-block text-center">
                 Kom i gang gratis
-              </Button>
+              </a>
             </div>
 
             {/* SkoleMate Lærer */}
@@ -397,9 +397,9 @@ const Index = () => {
                 </li>
               </ul>
               
-              <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
+              <a href="https://app.skolemate.dk/accounts/signup/?role=teacher" target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 inline-block text-center">
                 Start gratis prøveperiode
-              </Button>
+              </a>
             </div>
 
             {/* SkoleMate Organisation */}
