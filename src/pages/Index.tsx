@@ -207,20 +207,30 @@ const Index = () => {
         <input type="email" name="email" />
       </form>
 
-      {/* Login Button - Responsive positioning */}
+      {/* Login Buttons - Desktop */}
       <div className="fixed top-6 right-6 z-50 lg:block hidden">
-        <a href="https://app.skolemate.dk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
-          <LogIn className="mr-2 w-4 h-4" />
-          Login
-        </a>
+        <div className="flex gap-3">
+          <a href="https://app.skolemate.dk/accounts/signup/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
+            Opret konto
+          </a>
+          <a href="https://app.skolemate.dk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
+            <LogIn className="mr-2 w-4 h-4" />
+            Login
+          </a>
+        </div>
       </div>
 
-      {/* Login Button - Mobile (bottom right) */}
+      {/* Login Buttons - Mobile (bottom right) */}
       <div className="fixed bottom-6 right-6 z-50 lg:hidden block">
-        <a href="https://app.skolemate.dk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
-          <LogIn className="mr-2 w-4 h-4" />
-          Login
-        </a>
+        <div className="flex flex-col gap-3">
+          <a href="https://app.skolemate.dk/accounts/signup/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
+            Opret konto
+          </a>
+          <a href="https://app.skolemate.dk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
+            <LogIn className="mr-2 w-4 h-4" />
+            Login
+          </a>
+        </div>
       </div>
 
       {/* Hero Section */}
