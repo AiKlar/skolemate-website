@@ -3,6 +3,7 @@ import { ChevronDown, BookOpen, MessageCircle, ClipboardList, Heart, Mail, Arrow
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from '@/components/ui/carousel';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import ContactForm from '@/components/ContactForm';
 import confetti from 'canvas-confetti';
 
@@ -217,9 +218,18 @@ const Index = () => {
       {/* Login Buttons - Desktop */}
       <div className="fixed top-6 right-6 z-50 lg:block hidden">
         <div className="flex gap-3">
-          <a href="https://app.skolemate.dk/accounts/signup/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
-            Opret konto
-          </a>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white font-medium rounded-lg shadow-lg cursor-not-allowed opacity-75">
+                  Opret konto
+                </button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Glæd dig – det bliver snart muligt at signe op til SkoleMate!</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <a href="https://app.skolemate.dk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
             <LogIn className="mr-2 w-4 h-4" />
             Login
@@ -230,9 +240,18 @@ const Index = () => {
       {/* Login Buttons - Mobile (bottom right) */}
       <div className="fixed bottom-6 right-6 z-50 lg:hidden block">
         <div className="flex flex-col gap-3">
-          <a href="https://app.skolemate.dk/accounts/signup/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
-            Opret konto
-          </a>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white font-medium rounded-lg shadow-lg cursor-not-allowed opacity-75">
+                  Opret konto
+                </button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Glæd dig – det bliver snart muligt at signe op til SkoleMate!</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <a href="https://app.skolemate.dk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
             <LogIn className="mr-2 w-4 h-4" />
             Login
